@@ -11,6 +11,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../Utility/Colors.dart';
+
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);
 
@@ -39,7 +41,6 @@ class _NavigationState extends State<Navigation> {
 
   int _pageindex = 0;
 
-
   @override
   void initState() {
     // TODO: implement initState
@@ -55,7 +56,6 @@ class _NavigationState extends State<Navigation> {
   }
 
   void _openPage(int index) {
-    
     var _type = FeedbackType.selection;
     Vibrate.feedback(_type);
     setState(() {
@@ -80,7 +80,7 @@ class _NavigationState extends State<Navigation> {
         ]),
       ),
       bottomNavigationBar: CurvedNavigationBar(
-          color: HexColor("#313A4A"),
+          color: kNavbarcolour,
           backgroundColor: Colors.transparent,
           items: _pages.map((Pages page) {
             return Column(
@@ -94,7 +94,6 @@ class _NavigationState extends State<Navigation> {
                       ? HexColor("#FFFFFF")
                       : HexColor("#8E8E8E"),
                 ),
-           
               ],
             );
           }).toList(),
