@@ -1,4 +1,3 @@
-import 'dart:ui';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:evently/Screens/Clubs/Clubs.dart';
@@ -9,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:sizer/sizer.dart';
 
 import '../../Utility/Colors.dart';
 
@@ -65,11 +63,7 @@ class _NavigationState extends State<Navigation> {
 
   @override
   Widget build(BuildContext context) {
-    List routes = [
-      HomePage(),
-      Clubs(),
-      Profile(),
-    ];
+   
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SizedBox(
@@ -80,6 +74,7 @@ class _NavigationState extends State<Navigation> {
         ]),
       ),
       bottomNavigationBar: CurvedNavigationBar(
+        
           color: kNavbarcolour,
           backgroundColor: Colors.transparent,
           items: _pages.map((Pages page) {

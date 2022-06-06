@@ -1,10 +1,9 @@
-import 'package:evently/Screens/HomePage/HomePage.dart';
+import 'package:evently/Screens/SignIN/SignIn.dart';
 import 'package:evently/Utility/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-import 'Screens/Navigation/Navigation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,9 +20,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Evently',
         theme: ThemeData(
-            fontFamily: GoogleFonts.inter().fontFamily,
+            fontFamily: GoogleFonts.chivo().fontFamily,
             scaffoldBackgroundColor: kBackgroundColor),
-        home: Navigation(),
+        home: SignIn(),
       ),
     );
   }

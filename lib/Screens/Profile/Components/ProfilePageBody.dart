@@ -137,7 +137,7 @@ class _ProfilePageBodyState extends State<ProfilePageBody> {
                     style: GoogleFonts.getFont(
                       "Chivo",
                       color: ktextWhiteColor,
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -163,7 +163,7 @@ class _ProfilePageBodyState extends State<ProfilePageBody> {
                     style: GoogleFonts.getFont(
                       "Chivo",
                       color: ktextWhiteColor,
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
@@ -195,7 +195,7 @@ class _ProfilePageBodyState extends State<ProfilePageBody> {
                             pauseBetween: Duration(milliseconds: 1000),
                             mode: TextScrollMode.bouncing,
                             style:
-                                TextStyle(color: ktextWhiteColor, fontSize: 20),
+                                TextStyle(color: ktextWhiteColor, fontSize: 18),
                             textAlign: TextAlign.right,
                             selectable: false,
                           ),
