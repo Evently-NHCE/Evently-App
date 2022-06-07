@@ -129,9 +129,8 @@ class _EventCardState extends State<EventCard> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                       color: Colors.white,
+                      color: Colors.white,
                     ),
-                   
                     height: 6.h,
                     width: 15.w,
                     child: Column(
@@ -139,8 +138,10 @@ class _EventCardState extends State<EventCard> {
                       children: [
                         Text(
                           "08",
-                          style:
-                              TextStyle(color: kTextPurplecolor, fontSize: 12,fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: kTextPurplecolor,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
                         ),
                         Text(
                           "June",

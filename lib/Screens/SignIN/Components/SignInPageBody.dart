@@ -73,14 +73,16 @@ class SignInPageBody extends StatelessWidget {
                   height: 5.h,
                 ),
                 InkWell(
-                    splashColor: HexColor("#8454CE"),
-                    customBorder: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    onTap: () {
-                      var _type = FeedbackType.selection;
-                      Vibrate.feedback(_type);
-                    },
-                    child: RoundedIconButton()),
+                  splashColor: HexColor("#8454CE"),
+                  customBorder: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  onTap: () {
+                    var _type = FeedbackType.selection;
+                    Vibrate.feedback(_type);
+                    Navigator.pushNamed(context, '/SignUp');
+                  },
+                  child: RoundedIconButton(),
+                ),
                 SizedBox(
                   height: 2.h,
                 ),
@@ -97,12 +99,19 @@ class SignInPageBody extends StatelessWidget {
                     SizedBox(
                       width: 2.w,
                     ),
-                    Text(
-                      'Create account',
-                      style: TextStyle(
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                    InkWell(
+                      onTap: () {
+                        var _type = FeedbackType.selection;
+                        Vibrate.feedback(_type);
+                        Navigator.pushNamed(context, "/SignUp");
+                      },
+                      child: Text(
+                        'Create account',
+                        style: TextStyle(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
                     ),
                   ],
                 ),
