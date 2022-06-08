@@ -76,7 +76,7 @@ class SignUPPageBody extends StatelessWidget {
                   enableSuggestions: true,
                   autocorrect: true,
                   hintText: "Email",
-                  icondata: Icons.account_circle,
+                  icondata: Icons.email_rounded,
                 ),
                 SizedBox(
                   height: 3.h,
@@ -98,9 +98,11 @@ class SignUPPageBody extends StatelessWidget {
                     onTap: () {
                       var _type = FeedbackType.selection;
                       Vibrate.feedback(_type);
-                      Navigator.pushNamed(context, '/Navigation');
+                      Navigator.pushNamed(context, '/DataForm');
                     },
-                    child: RoundedIconButton()),
+                    child: RoundedIconButton(
+                      hinttext: "Sign Up",
+                    )),
                 SizedBox(
                   height: 3.h,
                 ),

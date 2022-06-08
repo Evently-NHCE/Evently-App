@@ -3,7 +3,8 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
 class RoundedIconButton extends StatelessWidget {
-  const RoundedIconButton({Key? key}) : super(key: key);
+  final String  hinttext;
+  const RoundedIconButton({Key? key,required this.hinttext}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +17,10 @@ class RoundedIconButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Text(
-            "Sign In",
+            hinttext,
             style: TextStyle(
               color: Colors.white,
+              fontWeight: FontWeight.bold
             ),
           )
         ],

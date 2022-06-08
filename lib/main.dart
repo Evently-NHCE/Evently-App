@@ -1,14 +1,21 @@
+import 'package:device_preview_community/device_preview_community.dart';
+import 'package:evently/Screens/DataForm/DataForm.dart';
 import 'package:evently/Screens/Navigation/Navigation.dart';
 import 'package:evently/Screens/SignIN/SignIn.dart';
 import 'package:evently/Utility/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
-
+import 'package:flutter/services.dart';
 import 'Screens/SignUP/SignUp.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]).then((value) => runApp(MyApp()));
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -19,12 +26,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, deviceType) => MaterialApp(
+        
         routes: {
           '/SignUp': (context) => SignUp(),
-                    '/SignIn': (context) => SignIn(),
-
-                    '/Navigation': (context) => Navigation(),
-
+          '/SignIn': (context) => SignIn(),
+          '/Navigation': (context) => Navigation(),
+          '/DataForm': (context) => DataForm(),
         },
         debugShowCheckedModeBanner: false,
         title: 'Evently',

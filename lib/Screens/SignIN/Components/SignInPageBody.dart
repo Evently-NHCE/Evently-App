@@ -81,7 +81,10 @@ class SignInPageBody extends StatelessWidget {
                     Vibrate.feedback(_type);
                     Navigator.pushNamed(context, '/SignUp');
                   },
-                  child: RoundedIconButton(),
+                  child: RoundedIconButton(
+                    hinttext: "Sign In",
+                  
+                  ),
                 ),
                 SizedBox(
                   height: 2.h,
