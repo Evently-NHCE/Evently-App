@@ -11,21 +11,22 @@ final List<String> dates = [
   'Other',
 ];
 
-class GenderDropDownMenu extends StatefulWidget {
-  const GenderDropDownMenu({Key? key}) : super(key: key);
+class CollegeSelection extends StatefulWidget {
+  const CollegeSelection({Key? key}) : super(key: key);
 
   @override
-  State<GenderDropDownMenu> createState() => _GenderDropDownMenuState();
+  State<CollegeSelection> createState() => _CollegeSelectionState();
 }
-
-class _GenderDropDownMenuState extends State<GenderDropDownMenu> {
-  String? _chosenValue = 'Date';
+  String? college = '';
   bool _selected = false;
+
+class _CollegeSelectionState extends State<CollegeSelection> {
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 5.w),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.0),
           color: kNavbarcolour,
@@ -37,17 +38,18 @@ class _GenderDropDownMenuState extends State<GenderDropDownMenu> {
               isExpanded: true,
               alignment: Alignment.bottomCenter,
               icon: Image.asset("assets/Icons/DownArrow.png"),
+              dropdownColor: kNavbarcolour,
               iconSize: 30,
               hint: _selected
                   ? Text(
-                      _chosenValue.toString(),
+                      college.toString(),
                       style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: HexColor("#808999")),
                     )
                   : Text(
-                      "Select your gender",
+                      "Select your college",
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
                           color: HexColor("#808999")),
@@ -59,7 +61,7 @@ class _GenderDropDownMenuState extends State<GenderDropDownMenu> {
                 var _type = FeedbackType.selection;
                 Vibrate.feedback(_type);
                 setState(() {
-                  _chosenValue = val;
+                  college = val;
                 });
               },
               items: dates
@@ -70,7 +72,11 @@ class _GenderDropDownMenuState extends State<GenderDropDownMenu> {
                             const SizedBox(
                               height: 8,
                             ),
-                            Text(e)
+                            Text(
+                              e,
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12),
+                            )
                           ],
                         ),
                       ))

@@ -7,20 +7,26 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
 final List<String> dates = [
-  'Male',
-  'Female',
+  'CSE',
+  'ECE',
+  'AI/ML',
+  'Data Science',
+  'AUTOMOBILE',
+  'MECHANICAL',
+  'ISE',
+  'CIVIL',
   'Other',
 ];
 
-class GenderDropDownMenu extends StatefulWidget {
-  const GenderDropDownMenu({Key? key}) : super(key: key);
+class BranchSelection extends StatefulWidget {
+  const BranchSelection({Key? key}) : super(key: key);
 
   @override
-  State<GenderDropDownMenu> createState() => _GenderDropDownMenuState();
+  State<BranchSelection> createState() => _BranchSelectionState();
 }
-  String? gender = '';
+  String? branch = '';
   bool _selected = false;
-class _GenderDropDownMenuState extends State<GenderDropDownMenu> {
+class _BranchSelectionState extends State<BranchSelection> {
 
 
   @override
@@ -35,22 +41,22 @@ class _GenderDropDownMenuState extends State<GenderDropDownMenu> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: DropdownButton(
-              underline: SizedBox(),
               dropdownColor: kNavbarcolour,
+              underline: SizedBox(),
               isExpanded: true,
               alignment: Alignment.bottomCenter,
               icon: Image.asset("assets/Icons/DownArrow.png"),
               iconSize: 30,
               hint: _selected
                   ? Text(
-                      gender.toString(),
+                      branch.toString(),
                       style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: HexColor("#808999")),
                     )
                   : Text(
-                      "Select your gender",
+                      "Select your branch",
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
                           color: HexColor("#808999")),
@@ -62,7 +68,7 @@ class _GenderDropDownMenuState extends State<GenderDropDownMenu> {
                 var _type = FeedbackType.selection;
                 Vibrate.feedback(_type);
                 setState(() {
-                  gender = val;
+                  branch = val;
                 });
               },
               items: dates

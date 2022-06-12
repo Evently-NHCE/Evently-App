@@ -7,20 +7,21 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
 final List<String> dates = [
-  'Male',
-  'Female',
-  'Other',
+  '1st Year',
+  '2nd Year',
+  '3rd Year',
+  '4th Year',
 ];
 
-class GenderDropDownMenu extends StatefulWidget {
-  const GenderDropDownMenu({Key? key}) : super(key: key);
+class CurrentYear extends StatefulWidget {
+  const CurrentYear({Key? key}) : super(key: key);
 
   @override
-  State<GenderDropDownMenu> createState() => _GenderDropDownMenuState();
+  State<CurrentYear> createState() => _CurrentYearState();
 }
-  String? gender = '';
+  String? currentyear = '';
   bool _selected = false;
-class _GenderDropDownMenuState extends State<GenderDropDownMenu> {
+class _CurrentYearState extends State<CurrentYear> {
 
 
   @override
@@ -43,14 +44,14 @@ class _GenderDropDownMenuState extends State<GenderDropDownMenu> {
               iconSize: 30,
               hint: _selected
                   ? Text(
-                      gender.toString(),
+                      currentyear.toString(),
                       style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: HexColor("#808999")),
                     )
                   : Text(
-                      "Select your gender",
+                      "Your current year of college",
                       style: TextStyle(
                           fontWeight: FontWeight.normal,
                           color: HexColor("#808999")),
@@ -62,7 +63,7 @@ class _GenderDropDownMenuState extends State<GenderDropDownMenu> {
                 var _type = FeedbackType.selection;
                 Vibrate.feedback(_type);
                 setState(() {
-                  gender = val;
+                  currentyear = val;
                 });
               },
               items: dates
