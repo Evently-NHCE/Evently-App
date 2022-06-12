@@ -9,13 +9,15 @@ class RoundedBoxTextField extends StatelessWidget {
   final bool obscureText;
   final bool autocorrect;
   final bool enableSuggestions;
+  final TextEditingController controller;
   const RoundedBoxTextField(
       {Key? key,
       required this.icondata,
       required this.hintText,
       required this.obscureText,
       required this.autocorrect,
-      required this.enableSuggestions})
+      required this.enableSuggestions,
+      required this.controller})
       : super(key: key);
 
   @override
@@ -26,6 +28,7 @@ class RoundedBoxTextField extends StatelessWidget {
         color: kNavbarcolour,
       ),
       child: TextField(
+        controller: controller,
         obscureText: obscureText,
         enableSuggestions: enableSuggestions,
         autocorrect: autocorrect,
