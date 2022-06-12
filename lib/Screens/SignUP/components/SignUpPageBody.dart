@@ -7,9 +7,12 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
 class SignUPPageBody extends StatelessWidget {
-  const SignUPPageBody({Key? key}) : super(key: key);
+  SignUPPageBody({Key? key}) : super(key: key);
 
-  @override
+  TextEditingController usnControlller = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController emailControler = TextEditingController();
+  TextEditingController nameController = TextEditingController();
   Widget build(BuildContext context) {
     return Stack(
       children: [
@@ -52,6 +55,7 @@ class SignUPPageBody extends StatelessWidget {
                   height: 3.h,
                 ),
                 RoundedBoxTextField(
+                  controller: usnControlller,
                   obscureText: false,
                   enableSuggestions: true,
                   autocorrect: true,
@@ -62,6 +66,7 @@ class SignUPPageBody extends StatelessWidget {
                   height: 3.h,
                 ),
                 RoundedBoxTextField(
+                  controller: nameController,
                   obscureText: false,
                   enableSuggestions: true,
                   autocorrect: true,
@@ -72,6 +77,7 @@ class SignUPPageBody extends StatelessWidget {
                   height: 3.h,
                 ),
                 RoundedBoxTextField(
+                  controller: emailControler,
                   obscureText: false,
                   enableSuggestions: true,
                   autocorrect: true,
@@ -82,6 +88,7 @@ class SignUPPageBody extends StatelessWidget {
                   height: 3.h,
                 ),
                 RoundedBoxTextField(
+                  controller: passwordController,
                   obscureText: true,
                   enableSuggestions: false,
                   autocorrect: false,
@@ -96,9 +103,17 @@ class SignUPPageBody extends StatelessWidget {
                     customBorder: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     onTap: () {
-                      var _type = FeedbackType.selection;
-                      Vibrate.feedback(_type);
-                      Navigator.pushNamed(context, '/DataForm');
+                      if (emailControler.text.isEmpty ||
+                          passwordController.text.isEmpty ||
+                          usnControlller.text.isEmpty ||
+                          nameController.text.isEmpty) {
+                        var _type = FeedbackType.error;
+                        Vibrate.feedback(_type);
+                      } else {
+                        var _type = FeedbackType.selection;
+                        Vibrate.feedback(_type);
+                        Navigator.pushNamed(context, '/DataForm');
+                      }
                     },
                     child: RoundedIconButton(
                       hinttext: "Sign Up",

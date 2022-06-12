@@ -8,9 +8,11 @@ import 'package:sizer/sizer.dart';
 import 'RoundedIconButton.dart';
 
 class SignInPageBody extends StatelessWidget {
-  const SignInPageBody({Key? key}) : super(key: key);
+  SignInPageBody({Key? key}) : super(key: key);
 
   @override
+  TextEditingController _usncontroller = TextEditingController();
+  TextEditingController _passwordcontroller = TextEditingController();
   Widget build(BuildContext context) {
     return Stack(
       children: [
@@ -53,6 +55,7 @@ class SignInPageBody extends StatelessWidget {
                   height: 5.h,
                 ),
                 RoundedBoxTextField(
+                  controller: _usncontroller,
                   obscureText: false,
                   enableSuggestions: true,
                   autocorrect: true,
@@ -63,6 +66,7 @@ class SignInPageBody extends StatelessWidget {
                   height: 5.h,
                 ),
                 RoundedBoxTextField(
+                  controller: _passwordcontroller,
                   obscureText: true,
                   enableSuggestions: false,
                   autocorrect: false,
@@ -83,7 +87,6 @@ class SignInPageBody extends StatelessWidget {
                   },
                   child: RoundedIconButton(
                     hinttext: "Sign In",
-                  
                   ),
                 ),
                 SizedBox(
