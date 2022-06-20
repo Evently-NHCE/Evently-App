@@ -6,7 +6,11 @@ class CustomSnackbr extends StatelessWidget {
   String message = "";
   late Color color;
 
-  CustomSnackbr({Key? key, required this.title, required this.message,required this.color})
+  CustomSnackbr(
+      {Key? key,
+      required this.title,
+      required this.message,
+      required this.color})
       : super(key: key);
 
   @override
@@ -16,7 +20,7 @@ class CustomSnackbr extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         height: 10.h,
         decoration: BoxDecoration(
-          color:color,
+          color: color,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
