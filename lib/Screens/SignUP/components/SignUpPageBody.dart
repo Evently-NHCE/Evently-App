@@ -6,8 +6,15 @@ import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../Utility/CustomSnackBar.dart';
+
 class SignUPPageBody extends StatelessWidget {
   SignUPPageBody({Key? key}) : super(key: key);
+
+  static String usn = "";
+  static String name = "";
+  static String email = " ";
+  static String password = " ";
 
   TextEditingController usnControlller = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -109,11 +116,56 @@ class SignUPPageBody extends StatelessWidget {
                           nameController.text.isEmpty) {
                         var _type = FeedbackType.error;
                         Vibrate.feedback(_type);
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          behavior: SnackBarBehavior.floating,
+                          backgroundColor: Colors.transparent,
+                          elevation: 0,
+                          content: CustomSnackbr(
+                            title: "Fill all the fields",
+                            message: '',
+                            color: Colors.red,
+                          ),
+                        ));
                       } else {
-                        var _type = FeedbackType.selection;
-                        Vibrate.feedback(_type);
-                        Navigator.pushNamed(context, '/DataForm');
+                        if (usnControlller.text.contains("1NH")) {
+                          if (emailControler.text.contains("@gmail.com")) {
+                            usn = usnControlller.text;
+                            name = nameController.text;
+                            email = emailControler.text;
+                            password = passwordController.text;
+                            var _type = FeedbackType.selection;
+                            Vibrate.feedback(_type);
+                            Navigator.pushNamed(context, '/DataForm');
+                          } else {
+                            var _type = FeedbackType.error;
+                            Vibrate.feedback(_type);
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              behavior: SnackBarBehavior.floating,
+                              backgroundColor: Colors.transparent,
+                              elevation: 0,
+                              content: CustomSnackbr(
+                                title: "Enter a Valid Email Address",
+                                message: '',
+                                color: Colors.red,
+                              ),
+                            ));
+                          }
+                        } else {
+                          var _type = FeedbackType.error;
+                          Vibrate.feedback(_type);
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            behavior: SnackBarBehavior.floating,
+                            backgroundColor: Colors.transparent,
+                            elevation: 0,
+                            content: CustomSnackbr(
+                              title: "Enter a Valid USN",
+                              message: 'ex: 1NH12CS001',
+                              color: Colors.red,
+                            ),
+                          ));
+                        }
                       }
+                      ;
                     },
                     child: RoundedIconButton(
                       hinttext: "Sign Up",
