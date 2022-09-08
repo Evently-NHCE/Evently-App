@@ -1,5 +1,6 @@
-import 'package:device_preview_community/device_preview_community.dart';
+//import 'package:device_preview_community/device_preview_community.dart';
 import 'package:evently/Screens/DataForm/DataForm.dart';
+import 'package:evently/Screens/HomePage/HomePage.dart';
 import 'package:evently/Screens/Navigation/Navigation.dart';
 import 'package:evently/Screens/SignIN/SignIn.dart';
 import 'package:evently/Utility/Colors.dart';
@@ -18,6 +19,11 @@ void main() {
   runApp(MyApp());
 }
 
+// CAlculate the height of the screen
+double screenHeight(BuildContext context, {double dividedBy = 1}) {
+  return MediaQuery.of(context).size.height / dividedBy;
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -26,7 +32,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, deviceType) => MaterialApp(
-        
         routes: {
           '/SignUp': (context) => SignUp(),
           '/SignIn': (context) => SignIn(),
@@ -38,7 +43,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             fontFamily: GoogleFonts.chivo().fontFamily,
             scaffoldBackgroundColor: kBackgroundColor),
-        home: SignIn(),
+        home: HomePage(),
       ),
     );
   }
