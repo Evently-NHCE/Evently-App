@@ -57,7 +57,7 @@ class _EventCardState extends State<EventCard> {
                               pauseBetween: Duration(milliseconds: 1000),
                               mode: TextScrollMode.bouncing,
                               style: TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.blue,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                               textAlign: TextAlign.right,
