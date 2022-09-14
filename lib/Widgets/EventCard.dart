@@ -1,5 +1,6 @@
 import 'package:evently/Utility/Colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 import 'package:text_scroll/text_scroll.dart';
@@ -19,8 +20,8 @@ class _EventCardState extends State<EventCard> {
         child: Stack(
           children: [
             Container(
-                height: 35.h,
-                width: 90.w,
+                height: 28.h,
+                width: 80.w,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(22),
@@ -28,128 +29,146 @@ class _EventCardState extends State<EventCard> {
                 child: Column(
                   children: [
                     Container(
-                      height: 20.h,
-                      width: 90.w,
+                      height: 17.5.h,
+                      width: 80.w,
                       child: ClipRRect(
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(22.0),
                             topRight: Radius.circular(22.0),
                           ),
                           child: Image.asset(
-                            "assets/Images/e1.jpeg",
+                            "assets/Images/e4.png",
                             fit: BoxFit.cover,
                           )),
                     ),
-                    SizedBox(height: 1.h),
-                    SizedBox(
-                      width: 90.w,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                    SizedBox(height: 3.h),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5),
+                      child: Column(
                         children: [
                           SizedBox(
-                            width: 2.w,
-                          ),
-                          Expanded(
-                            child: TextScroll(
-                              "Workshop on Flutter",
-                              velocity:
-                                  Velocity(pixelsPerSecond: Offset(20, 0)),
-                              pauseBetween: Duration(milliseconds: 1000),
-                              mode: TextScrollMode.bouncing,
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold),
-                              textAlign: TextAlign.right,
-                              selectable: false,
+                            width: 80.w,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width: 2.w,
+                                ),
+                                Expanded(
+                                  child: TextScroll(
+                                    "Code-a-Pookkalam",
+                                    velocity: Velocity(
+                                        pixelsPerSecond: Offset(20, 0)),
+                                    pauseBetween: Duration(milliseconds: 1000),
+                                    mode: TextScrollMode.bouncing,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                    textAlign: TextAlign.right,
+                                    selectable: false,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 90.w,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
+                          SizedBox(height: 0.4.h),
                           SizedBox(
-                            width: 2.w,
-                          ),
-                          Expanded(
-                            child: TextScroll(
-                              "Mobile App Development Club",
-                              velocity:
-                                  Velocity(pixelsPerSecond: Offset(20, 0)),
-                              pauseBetween: Duration(milliseconds: 1000),
-                              mode: TextScrollMode.bouncing,
-                              style: TextStyle(
-                                  color: HexColor("#808999"),
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal),
-                              textAlign: TextAlign.right,
-                              selectable: false,
+                            width: 80.w,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width: 2.w,
+                                ),
+                                Image.asset(
+                                  "assets/Icons/clock.png",
+                                  fit: BoxFit.fitHeight,
+                                  height: 2.h,
+                                ),
+                                SizedBox(
+                                  width: 1.w,
+                                ),
+                                Expanded(
+                                  child: TextScroll(
+                                    "01:00 PM - 02:00 PM",
+                                    velocity: Velocity(
+                                        pixelsPerSecond: Offset(20, 0)),
+                                    pauseBetween: Duration(milliseconds: 1000),
+                                    mode: TextScrollMode.bouncing,
+                                    style: TextStyle(
+                                        color: HexColor("#808999"),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.normal),
+                                    textAlign: TextAlign.right,
+                                    selectable: false,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 90.w,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            width: 2.w,
-                          ),
-                          Expanded(
-                            child: TextScroll(
-                              "01:00 PM - 02:00 PM",
-                              velocity:
-                                  Velocity(pixelsPerSecond: Offset(20, 0)),
-                              pauseBetween: Duration(milliseconds: 1000),
-                              mode: TextScrollMode.bouncing,
-                              style: TextStyle(
-                                  color: HexColor("#808999"),
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.normal),
-                              textAlign: TextAlign.right,
-                              selectable: false,
-                            ),
-                          ),
+                          SizedBox(height: 1.h),
                         ],
                       ),
                     ),
                   ],
                 )),
             Positioned(
-                top: 16.h,
-                left: 70.w,
+                top: 14.h,
+                left: 2.w,
                 child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(7.0),
+                  ),
                   elevation: 5,
+                  shadowColor: HexColor("#808999"),
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(7),
+                      color: HexColor("#7862F7"),
                     ),
-                    height: 6.h,
-                    width: 15.w,
+                    height: 5.h,
+                    width: 5.h,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
                           "08",
                           style: TextStyle(
-                              color: kTextPurplecolor,
+                              color: kWhiteColor,
                               fontSize: 12,
                               fontWeight: FontWeight.bold),
                         ),
                         Text(
                           "June",
-                          style:
-                              TextStyle(color: kTextPurplecolor, fontSize: 12),
+                          style: TextStyle(color: kWhiteColor, fontSize: 12),
                         ),
                       ],
                     ),
+                  ),
+                )),
+            Positioned(
+                top: 16.h,
+                left: 58.w,
+                child: Material(
+                  elevation: 3,
+                  borderRadius: BorderRadius.circular(13),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: HexColor("#C9F560"),
+                      borderRadius: BorderRadius.circular(13),
+                    ),
+                    height: 25,
+                    width: 80,
+                    child: Center(
+                        child: Text(
+                      'MD Club',
+                      style: GoogleFonts.chivo(
+                        color: Colors.black,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    )),
                   ),
                 ))
           ],

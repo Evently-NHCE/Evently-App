@@ -24,11 +24,11 @@ class BranchSelection extends StatefulWidget {
   @override
   State<BranchSelection> createState() => _BranchSelectionState();
 }
-  String? branch = '';
-  bool _selected = false;
+
+String? branch = '';
+bool _selected = false;
+
 class _BranchSelectionState extends State<BranchSelection> {
-
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -45,7 +45,7 @@ class _BranchSelectionState extends State<BranchSelection> {
               underline: SizedBox(),
               isExpanded: true,
               alignment: Alignment.bottomCenter,
-              icon: Image.asset("assets/Icons/DownArrow.png"),
+              icon: Image.asset("assets/Icons/.png"),
               iconSize: 30,
               hint: _selected
                   ? Text(
