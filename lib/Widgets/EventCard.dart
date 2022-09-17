@@ -36,7 +36,7 @@ class _EventCardState extends State<EventCard> {
                             topRight: Radius.circular(22.0),
                           ),
                           child: Image.asset(
-                            "assets/Images/e1.jpeg",
+                            "assets/images/e1.jpeg",
                             fit: BoxFit.cover,
                           )),
                     ),
