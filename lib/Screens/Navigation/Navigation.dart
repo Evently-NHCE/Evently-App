@@ -1,4 +1,3 @@
-
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:evently/Screens/Clubs/Clubs.dart';
 import 'package:evently/Screens/HomePage/HomePage.dart';
@@ -35,6 +34,11 @@ class _NavigationState extends State<Navigation> {
       size: 30,
       title: 'Profile',
     ),
+    Pages(
+      iconpath: Icons.person,
+      size: 30,
+      title: 'Profile',
+    ),
   ];
 
   int _pageindex = 0;
@@ -63,7 +67,6 @@ class _NavigationState extends State<Navigation> {
 
   @override
   Widget build(BuildContext context) {
-   
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SizedBox(
@@ -74,7 +77,6 @@ class _NavigationState extends State<Navigation> {
         ]),
       ),
       bottomNavigationBar: CurvedNavigationBar(
-        
           color: kNavbarcolour,
           backgroundColor: Colors.transparent,
           items: _pages.map((Pages page) {
