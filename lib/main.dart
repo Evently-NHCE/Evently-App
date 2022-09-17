@@ -1,5 +1,6 @@
 import 'package:evently/Screens/DataForm/DataForm.dart';
 import 'package:evently/Screens/HomePage/HomePage.dart';
+import 'package:evently/Screens/My%20Events/MyEvents.dart';
 import 'package:evently/Screens/Navigation/Navigation.dart';
 import 'package:evently/Screens/SignIN/SignIn.dart';
 import 'package:evently/Utility/Colors.dart';
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             fontFamily: GoogleFonts.chivo().fontFamily,
             scaffoldBackgroundColor: kBackgroundColor),
-        home: HomePage(),
+        home: Navigation(),
       ),
     );
   }
