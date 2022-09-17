@@ -2,6 +2,7 @@ import 'package:evently/Screens/HomePage/Components/BuildAppbar.dart';
 import 'package:evently/Utility/Colors.dart';
 import 'package:evently/Widgets/EventCard.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
@@ -24,51 +25,44 @@ class _HomePageBodyState extends State<HomePageBody> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-      padding: EdgeInsets.only(left: 3.w, right: 3.w, top: 5.h),
-      child: Column(
-        children: [
-          HomeAppBar(),
-          SizedBox(height: 2.h),
-          buildsearchbar(),
-          buildSerchChips(),
-          SizedBox(height: 5.h),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                "Popular Events",
-                style: TextStyle(color: Colors.white, fontSize: 25),
-              ),
-            ],
-          ),
-                    SizedBox(height: 5.h),
-
-          buildPopularEvents(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                "Popular Events",
-                style: TextStyle(color: Colors.white, fontSize: 25),
-              ),
-            ],
-          ),
-                    SizedBox(height: 5.h),
-
-          buildPopularEvents(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                "Popular Events",
-                style: TextStyle(color: Colors.white, fontSize: 25),
-              ),
-            ],
-          ),
-          buildPopularEvents()
-        ],
+        padding: EdgeInsets.only(left: 3.w, right: 3.w, top: 5.h),
+        child: Column(
+          children: [
+            HomeAppBar(),
+            SizedBox(height: 2.h),
+            buildsearchbar(),
+            buildSerchChips(),
+            SizedBox(height: 2.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Popular Events",
+                  style: TextStyle(color: Colors.white, fontSize: 25),
+                ),
+              ],
+            ),
+            SizedBox(height: 2.h),
+            buildPopularEvents(),
+            SizedBox(height: 2.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Upcoming Events",
+                  style: GoogleFonts.poppins(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
+            SizedBox(height: 2.h),
+            buildPopularEvents(),
+            SizedBox(height: 2.h),
+          ],
+        ),
       ),
-    ),
     );
   }
 
@@ -101,13 +95,13 @@ class _HomePageBodyState extends State<HomePageBody> {
                 //   labelPadding: EdgeInsets.all(2.0),
 
                 label: Text(searchList[index],
-                    style: const TextStyle(
-                        // fontFamily: 'fonts/Lato-Bold.ttf',
-                        color: Colors.white,
+                    style: GoogleFonts.chivo(
+                        color: Colors.black,
                         fontSize: 14,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w400,
                         decoration: TextDecoration.none)),
-                backgroundColor: HexColor("#7220C9"),
+
+                backgroundColor: HexColor("#C9F560"),
                 elevation: 1.0, onPressed: () {},
               ),
             );
