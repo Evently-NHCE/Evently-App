@@ -40,9 +40,7 @@ class _EventCardState extends State<EventCard> {
                             topRight: Radius.circular(22.0),
                           ),
                           child: Image.asset(
-
-                            "assets/images/bg.png",
-
+                            "assets/Images/bg.png",
                             fit: BoxFit.cover,
                           )),
                     ),
@@ -86,9 +84,7 @@ class _EventCardState extends State<EventCard> {
                                 SizedBox(
                                   width: 2.w,
                                 ),
-
                                 HeroIcon(HeroIcons.clock),
-
                                 SizedBox(
                                   width: 1.w,
                                 ),
