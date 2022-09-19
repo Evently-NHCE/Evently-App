@@ -1,8 +1,11 @@
 import 'package:evently/Screens/EventPass/Components/EventPassAppBar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:heroicons/heroicons.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
+import 'package:sizer/sizer.dart';
+import '/Utility/Constants.dart';
 
 class EventPassBody extends StatefulWidget {
   const EventPassBody({Key? key}) : super(key: key);
@@ -14,18 +17,39 @@ class EventPassBody extends StatefulWidget {
 class _EventPassBodyState extends State<EventPassBody> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: InkWell(
+          onTap: () {
+            //  drawerController.openDrawer();
+            Navigator.of(context).pop();
+          },
+          child: Container(
+              margin: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: theme.secondaryColor,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: HeroIcon(HeroIcons.chevronLeft, color: Colors.white)),
+        ),
+        title: Text(
+          "Event Pass",
+          style: GoogleFonts.poppins(
+              //   color: Color.fromRGBO(65, 84, 252, 0.44),
+              fontSize: 20,
+              letterSpacing: 0,
+              fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-            child: PassAppBar(),
-          ),
-          SizedBox(
-            height: 25,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 25, top: 5, right: 25),
+            padding: EdgeInsets.only(left: 4.w, top: 2.h, right: 4.w),
             child: Stack(
               children: [
                 Column(
@@ -68,7 +92,7 @@ class _EventPassBodyState extends State<EventPassBody> {
                                 height: 5,
                               ),
                               Container(
-                                width: 292,
+                                width: 70.w,
                                 child: Divider(
                                   color: Colors.white,
                                   thickness: 3,
@@ -165,8 +189,8 @@ class _EventPassBodyState extends State<EventPassBody> {
                     Divider(
                       thickness: 1,
                       color: Colors.white,
-                      indent: 23,
-                      endIndent: 23,
+                      indent: 10.w,
+                      endIndent: 10.w,
                     ),
                     ClipPath(
                         clipper: ArcTopClipper(),
