@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:evently/Screens/Clubs/Clubs.dart';
 import 'package:evently/Screens/HomePage/HomePage.dart';
+import 'package:evently/Screens/My%20Events/MyEvents.dart';
 import 'package:evently/Screens/Navigation/Model/NavItem.dart';
 import 'package:evently/Screens/Profile/Profile.dart';
 import 'package:flutter/material.dart';
@@ -72,7 +73,7 @@ class _NavigationState extends State<Navigation> {
       body: SizedBox(
         child: IndexedStack(index: _pageindex, children: [
           HomePage(),
-          Clubs(),
+          MyEventBody(),
           Profile(),
         ]),
       ),

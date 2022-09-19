@@ -1,6 +1,9 @@
 import 'package:evently/Utility/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'package:heroicons/heroicons.dart';
+
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 import 'package:text_scroll/text_scroll.dart';
@@ -37,7 +40,7 @@ class _EventCardState extends State<EventCard> {
                             topRight: Radius.circular(22.0),
                           ),
                           child: Image.asset(
-                            "assets/Images/e4.png",
+                            "assets/Images/bg.png",
                             fit: BoxFit.cover,
                           )),
                     ),
@@ -81,11 +84,7 @@ class _EventCardState extends State<EventCard> {
                                 SizedBox(
                                   width: 2.w,
                                 ),
-                                Image.asset(
-                                  "assets/Icons/clock.png",
-                                  fit: BoxFit.fitHeight,
-                                  height: 2.h,
-                                ),
+                                HeroIcon(HeroIcons.clock),
                                 SizedBox(
                                   width: 1.w,
                                 ),
