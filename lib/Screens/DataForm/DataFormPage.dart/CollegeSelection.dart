@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:evently/Utility/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
@@ -17,11 +15,11 @@ class CollegeSelection extends StatefulWidget {
   @override
   State<CollegeSelection> createState() => _CollegeSelectionState();
 }
-  String? college = '';
-  bool _selected = false;
+
+String? college = '';
+bool _selected = false;
 
 class _CollegeSelectionState extends State<CollegeSelection> {
-
   @override
   Widget build(BuildContext context) {
     return Center(

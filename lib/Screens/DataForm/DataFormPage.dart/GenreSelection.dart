@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:evently/Utility/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
@@ -18,11 +16,11 @@ class GenderDropDownMenu extends StatefulWidget {
   @override
   State<GenderDropDownMenu> createState() => _GenderDropDownMenuState();
 }
-  String? gender = '';
-  bool _selected = false;
+
+String? gender = '';
+bool _selected = false;
+
 class _GenderDropDownMenuState extends State<GenderDropDownMenu> {
-
-
   @override
   Widget build(BuildContext context) {
     return Center(

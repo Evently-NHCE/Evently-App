@@ -1,7 +1,10 @@
+import 'package:evently/Screens/Event%20Details/EventDetails.dart';
 import 'package:evently/Screens/HomePage/Components/BuildAppbar.dart';
 import 'package:evently/Utility/Colors.dart';
+import 'package:evently/Utility/Constants.dart';
 import 'package:evently/Widgets/EventCard.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
@@ -28,8 +31,6 @@ class _HomePageBodyState extends State<HomePageBody> {
         padding: EdgeInsets.only(left: 3.w, right: 3.w, top: 5.h),
         child: Column(
           children: [
-            HomeAppBar(),
-            SizedBox(height: 2.h),
             buildsearchbar(),
             buildSerchChips(),
             SizedBox(height: 2.h),
@@ -74,7 +75,11 @@ class _HomePageBodyState extends State<HomePageBody> {
         scrollDirection: Axis.horizontal,
         itemCount: 5,
         itemBuilder: (context, index) {
-          return EventCard();
+          return InkWell(
+              onTap: () {
+                Get.to(EventDeatils());
+              },
+              child: EventCard());
         },
       ),
     );
@@ -113,7 +118,7 @@ class _HomePageBodyState extends State<HomePageBody> {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
-        color: kNavbarcolour,
+        color: HexColor("#3D4552"),
       ),
       child: TextField(
         style: TextStyle(color: kWhiteColor),
@@ -129,7 +134,7 @@ class _HomePageBodyState extends State<HomePageBody> {
           ),
           prefixIcon: Icon(
             Icons.search,
-            color: HexColor("#808999"),
+            color: AppColors.neoncolor,
             size: 30,
           ),
         ),

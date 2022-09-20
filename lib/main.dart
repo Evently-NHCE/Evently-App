@@ -1,12 +1,11 @@
 //import 'package:device_preview_community/device_preview_community.dart';
 import 'package:evently/Screens/DataForm/DataForm.dart';
-import 'package:evently/Screens/EventPass/EventPass.dart';
-import 'package:evently/Screens/HomePage/HomePage.dart';
-import 'package:evently/Screens/MyEvents/MyEvent.dart';
+import 'package:evently/Screens/Event%20Details/EventDetails.dart';
 import 'package:evently/Screens/Navigation/Navigation.dart';
 import 'package:evently/Screens/SignIN/SignIn.dart';
 import 'package:evently/Utility/Colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter/services.dart';
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Sizer(
-      builder: (context, orientation, deviceType) => MaterialApp(
+      builder: (context, orientation, deviceType) => GetMaterialApp(
         routes: {
           '/SignUp': (context) => SignUp(),
           '/SignIn': (context) => SignIn(),

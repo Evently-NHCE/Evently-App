@@ -35,7 +35,7 @@ class MyEventsCard extends StatelessWidget {
       child: Center(
         //Center widget to center the card
         child: Padding(
-          padding: EdgeInsets.only(bottom: 2.h),
+          padding: EdgeInsets.only(bottom: 3.h),
           //Padding widget to give some space between the cards
           child: Stack(
             //Stack widget to stack the card and the image and the Event Chip
@@ -170,7 +170,7 @@ class MyEventsCard extends StatelessWidget {
                                   child: Padding(
                                     padding: EdgeInsets.all(5),
                                     child: HeroIcon(
-                                      HeroIcons.calendar,
+                                      HeroIcons.map,
                                       color: HexColor("#C9F560"),
                                       size: 30,
                                     ),

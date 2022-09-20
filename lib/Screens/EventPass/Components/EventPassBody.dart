@@ -1,10 +1,9 @@
-import 'package:evently/Screens/EventPass/Components/EventPassAppBar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
+
 import '/Utility/Constants.dart';
 
 class EventPassBody extends StatefulWidget {
@@ -30,7 +29,7 @@ class _EventPassBodyState extends State<EventPassBody> {
           child: Container(
               margin: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: theme.secondaryColor,
+                color: AppColors.secondaryColor,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: HeroIcon(HeroIcons.chevronLeft, color: Colors.white)),
