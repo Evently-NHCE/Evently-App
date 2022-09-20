@@ -1,9 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:heroicons/heroicons.dart';
 
 import 'package:sizer/sizer.dart';
 
+import '../../Utility/Constants.dart';
 import 'Components/MyEventsCard.dart';
 
 class MyEventBody extends StatefulWidget {
@@ -51,16 +53,7 @@ class _MyEventBodyState extends State<MyEventBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        centerTitle: false,
-        title: Text(
-          "My Events",
-          style: GoogleFonts.poppins(
-              color: Colors.white, fontSize: 25, fontWeight: FontWeight.w600),
-        ),
-      ),
+      appBar: appBar(),
       body: Padding(
         padding: EdgeInsets.only(left: 3.w, right: 3.w, top: 2.h),
         //left:3.w means 3% of the screen width from left and right:3.w means 3% of the screen width from right and top:2.h means 2% of the screen height from top
@@ -87,6 +80,58 @@ class _MyEventBodyState extends State<MyEventBody> {
           ),
         ),
       ),
+    );
+  }
+
+  AppBar appBar() {
+    return AppBar(
+      centerTitle: true,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      leading: InkWell(
+        onTap: () {},
+        child: Container(
+            margin: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: AppColors.secondaryColor,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Image.asset("assets/Icons/hamburger.png")),
+      ),
+      title: Text(
+        "Evently",
+        style: GoogleFonts.nunito(
+            //   color: Color.fromRGBO(65, 84, 252, 0.44),
+            fontSize: 26,
+            letterSpacing: 1,
+            fontWeight: FontWeight.w600),
+      ),
+      actions: [
+        Padding(
+          padding: EdgeInsets.only(top: 2.h),
+          child: InkWell(
+              onTap: () async {},
+              child: Container(
+                height: 5.h,
+                width: 10.w,
+                decoration: BoxDecoration(
+                    color: AppColors.secondaryColor,
+                    borderRadius: BorderRadius.circular(10)),
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: HeroIcon(
+                    HeroIcons.bell,
+                    size: 10,
+                    solid: true,
+                    color: AppColors.neoncolor,
+                  ),
+                ),
+              )),
+        ),
+        SizedBox(
+          width: 4.w,
+        )
+      ],
     );
   }
 }

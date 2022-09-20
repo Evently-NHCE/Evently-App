@@ -27,7 +27,7 @@ class Navigation extends StatelessWidget {
               isFloating: true,
               iconSize: 30.0,
               borderRadius: Radius.circular(12),
-              selectedColor: theme.neoncolor,
+              selectedColor: AppColors.neoncolor,
               strokeColor: Color(0x30040307),
               unSelectedColor: Colors.white,
               backgroundColor: HexColor("#3D4552"),
