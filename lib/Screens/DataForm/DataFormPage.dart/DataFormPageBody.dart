@@ -11,14 +11,10 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../SignIN/Components/RoundedIconButton.dart';
-
 class DataFormPageBody extends StatefulWidget {
- 
-
-  DataFormPageBody(
-      {Key? key,})
-      : super(key: key);
+  DataFormPageBody({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<DataFormPageBody> createState() => _DataFormPageBodyState();

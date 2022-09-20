@@ -5,11 +5,11 @@ import 'package:get/get.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
+import '../My Events/MyEvents.dart';
 import '/Utility/Constants.dart';
 
 import '../../controllers/NavigationBarController.dart';
 import '../HomePage/HomePage.dart';
-import '../MyEvents/MyEvent.dart';
 
 class Navigation extends StatelessWidget {
   Navigation({Key? key}) : super(key: key);
@@ -57,7 +57,7 @@ class Navigation extends StatelessWidget {
               index: landingPageController.tabIndex.value,
               children: [
                 HomePage(),
-                MyEvent(),
+                MyEventBody(),
                 Profile(),
                 Profile(),
                 //   ProfilePAge(),

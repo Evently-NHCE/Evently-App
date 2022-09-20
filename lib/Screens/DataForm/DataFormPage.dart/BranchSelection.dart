@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:evently/Utility/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';

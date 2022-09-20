@@ -4,8 +4,6 @@ import 'package:heroicons/heroicons.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
-import 'package:evently/Screens/EventPass/Components/EventPassAppBar.dart';
-
 import '/Utility/Constants.dart';
 
 class EventPassBody extends StatefulWidget {
