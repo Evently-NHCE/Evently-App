@@ -1,98 +1,69 @@
-
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:evently/Screens/Clubs/Clubs.dart';
-import 'package:evently/Screens/HomePage/HomePage.dart';
-import 'package:evently/Screens/Navigation/Model/NavItem.dart';
+import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:evently/Screens/Profile/Profile.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_vibrate/flutter_vibrate.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:heroicons/heroicons.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:sizer/sizer.dart';
+import '../My Events/MyEvents.dart';
+import '/Utility/Constants.dart';
 
-import '../../Utility/Colors.dart';
+import '../../controllers/NavigationBarController.dart';
+import '../HomePage/HomePage.dart';
 
-class Navigation extends StatefulWidget {
-  const Navigation({Key? key}) : super(key: key);
-
-  @override
-  State<Navigation> createState() => _NavigationState();
-}
-
-class _NavigationState extends State<Navigation> {
-  final List<Pages> _pages = [
-    Pages(
-      iconpath: Icons.home,
-      size: 30,
-      title: 'Home',
-    ),
-    Pages(
-      iconpath: Icons.group,
-      size: 30,
-      title: 'Clubs',
-    ),
-    Pages(
-      iconpath: Icons.person,
-      size: 30,
-      title: 'Profile',
-    ),
-  ];
-
-  int _pageindex = 0;
-
-  @override
-  void initState() {
-    // TODO: implement initState
-
-    Future(() {
-      WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
-        setState(() {
-          _pageindex = 0;
-        });
-      });
-    });
-    super.initState();
-  }
-
-  void _openPage(int index) {
-    var _type = FeedbackType.selection;
-    Vibrate.feedback(_type);
-    setState(() {
-      _pageindex = index;
-    });
-  }
-
+class Navigation extends StatelessWidget {
+  Navigation({Key? key}) : super(key: key);
+  final bottomNavigationBarController landingPageController =
+      Get.put(bottomNavigationBarController(), permanent: false);
   @override
   Widget build(BuildContext context) {
-   
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: SizedBox(
-        child: IndexedStack(index: _pageindex, children: [
-          HomePage(),
-          Clubs(),
-          Profile(),
-        ]),
-      ),
-      bottomNavigationBar: CurvedNavigationBar(
-        
-          color: kNavbarcolour,
-          backgroundColor: Colors.transparent,
-          items: _pages.map((Pages page) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                FaIcon(
-                  page.iconpath,
-                  size: page.size,
-                  color: _pageindex == _pages.indexOf(page)
-                      ? HexColor("#FFFFFF")
-                      : HexColor("#8E8E8E"),
+        extendBody: true,
+        bottomNavigationBar: Obx(
+          () => Padding(
+            padding: EdgeInsets.only(bottom: 2.h),
+            child: CustomNavigationBar(
+              elevation: 10,
+              isFloating: true,
+              iconSize: 30.0,
+              borderRadius: Radius.circular(12),
+              selectedColor: AppColors.neoncolor,
+              strokeColor: Color(0x30040307),
+              unSelectedColor: Colors.white,
+              backgroundColor: HexColor("#3D4552"),
+              items: [
+                CustomNavigationBarItem(
+                  icon: const HeroIcon(HeroIcons.home),
+                ),
+                CustomNavigationBarItem(
+                  icon: const HeroIcon(HeroIcons.collection),
+                ),
+                CustomNavigationBarItem(
+                  icon: const HeroIcon(HeroIcons.bookmark),
+                ),
+                CustomNavigationBarItem(
+                  icon: const HeroIcon(HeroIcons.user),
                 ),
               ],
-            );
-          }).toList(),
-          onTap: _openPage),
-    );
+              currentIndex: landingPageController.tabIndex.value,
+              onTap: landingPageController.changeTabIndex,
+            ),
+          ),
+        ),
+        body: SafeArea(
+          maintainBottomViewPadding: true,
+          child: Obx(
+            () => IndexedStack(
+              index: landingPageController.tabIndex.value,
+              children: [
+                HomePage(),
+                MyEventBody(),
+                Profile(),
+                Profile(),
+                //   ProfilePAge(),
+              ],
+            ),
+          ),
+        ));
   }
 }

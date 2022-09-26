@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:evently/Utility/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
@@ -19,11 +17,11 @@ class CurrentYear extends StatefulWidget {
   @override
   State<CurrentYear> createState() => _CurrentYearState();
 }
-  String? currentyear = '';
-  bool _selected = false;
+
+String? currentyear = '';
+bool _selected = false;
+
 class _CurrentYearState extends State<CurrentYear> {
-
-
   @override
   Widget build(BuildContext context) {
     return Center(
