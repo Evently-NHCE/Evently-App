@@ -23,7 +23,7 @@ class _EventCardState extends State<EventCard> {
         child: Stack(
           children: [
             Container(
-                height: 28.h,
+                height: 29.h,
                 width: 80.w,
                 decoration: BoxDecoration(
                   color: Colors.white,
