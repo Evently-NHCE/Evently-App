@@ -1,6 +1,6 @@
 //import 'package:device_preview_community/device_preview_community.dart';
 import 'package:evently/Screens/DataForm/DataForm.dart';
-import 'package:evently/Screens/Event%20Details/EventDetails.dart';
+
 import 'package:evently/Screens/Navigation/Navigation.dart';
 import 'package:evently/Screens/SignIN/SignIn.dart';
 import 'package:evently/Utility/Colors.dart';
