@@ -2,7 +2,6 @@
 import 'package:evently/Screens/DataForm/DataForm.dart';
 
 import 'package:evently/Screens/Navigation/Navigation.dart';
-import 'package:evently/Screens/Profile/Profile.dart';
 import 'package:evently/Screens/SignIN/SignIn.dart';
 import 'package:evently/Utility/Colors.dart';
 import 'package:flutter/material.dart';
@@ -11,8 +10,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 import 'package:flutter/services.dart';
 import 'Screens/SignUP/SignUp.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 
 // await Firebase.initializeApp(
 //   options: DefaultFirebaseOptions.currentPlatform,
@@ -53,7 +50,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             fontFamily: GoogleFonts.chivo().fontFamily,
             scaffoldBackgroundColor: kBackgroundColor),
-        home: Profile(),
+        home: Navigation(),
       ),
     );
   }

@@ -1,6 +1,5 @@
 import 'package:evently/Screens/HomePage/Components/HomePageBody.dart';
 import 'package:evently/Utility/Constants.dart';
-import 'package:evently/Widgets/CircleIcons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:heroicons/heroicons.dart';

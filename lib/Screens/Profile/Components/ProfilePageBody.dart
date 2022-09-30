@@ -1,9 +1,8 @@
 import 'package:evently/Screens/Profile/Components/About.dart';
-import 'package:evently/Screens/Profile/Components/Attendance.dart';
 import 'package:evently/Screens/Profile/Components/Badges.dart';
 import 'package:evently/Screens/Profile/Components/Certificate.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -17,14 +16,13 @@ class ProfilePageBody extends StatefulWidget {
 }
 
 class _ProfilePageBodyState extends State<ProfilePageBody> {
-  bool clicked = false;
   int tabIndex = 0;
-  List<String> tabs = ['About', 'Badges', 'Certificates', 'Attendance'];
+  List<String> tabs = ['About', 'Badges', 'Certificates', 'Badges'];
   List tabWidgets = [
     AboutSection(),
     BadgesSection(),
     CertificateSection(),
-    AttendanceSection()
+    BadgesSection()
   ];
   @override
   Widget build(BuildContext context) {

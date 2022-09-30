@@ -1,5 +1,4 @@
 import 'package:evently/Screens/Event%20Details/EventDetails.dart';
-import 'package:evently/Screens/HomePage/Components/BuildAppbar.dart';
 import 'package:evently/Utility/Colors.dart';
 import 'package:evently/Utility/Constants.dart';
 import 'package:evently/Widgets/EventCard.dart';

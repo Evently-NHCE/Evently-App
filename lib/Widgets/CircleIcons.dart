@@ -14,7 +14,7 @@ class CircleIcons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var theme;
+    //var theme;
     return Container(
       height: 5.h,
       width: 10.w,

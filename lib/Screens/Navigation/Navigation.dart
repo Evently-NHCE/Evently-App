@@ -1,5 +1,4 @@
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
-import 'package:evently/Screens/Profile/Components/ProfilePageBody.dart';
 import 'package:evently/Screens/Profile/Profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -59,10 +58,9 @@ class Navigation extends StatelessWidget {
               index: landingPageController.tabIndex.value,
               children: [
                 HomePage(),
-                MyEventBody(),
-                BookMarkBody(),
+                MyEvent(),
+                BookMark(),
                 Profile(),
-                ProfilePageBody(),
               ],
             ),
           ),
