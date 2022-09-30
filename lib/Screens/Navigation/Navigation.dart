@@ -7,6 +7,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 import '../My Events/MyEvents.dart';
 import '/Utility/Constants.dart';
+import 'package:evently/Screens/BookMark/BookMark.dart';
 
 import '../../controllers/NavigationBarController.dart';
 import '../HomePage/HomePage.dart';
@@ -58,7 +59,7 @@ class Navigation extends StatelessWidget {
               children: [
                 HomePage(),
                 MyEventBody(),
-                Profile(),
+                BookMarkBody(),
                 Profile(),
                 //   ProfilePAge(),
               ],
