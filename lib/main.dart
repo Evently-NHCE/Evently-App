@@ -3,6 +3,7 @@ import 'package:evently/Screens/DataForm/DataForm.dart';
 
 import 'package:evently/Screens/Navigation/Navigation.dart';
 import 'package:evently/Screens/Onboarding/Onboarding.dart';
+import 'package:evently/Screens/Profile/Profile.dart';
 import 'package:evently/Screens/SignIN/SignIn.dart';
 import 'package:evently/Utility/Colors.dart';
 import 'package:flutter/material.dart';
