@@ -192,36 +192,36 @@ class BookMarkCard extends StatelessWidget {
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
-                                Positioned(
-                                    //Positioned widget to position the Event Chip
-                                    right: 5.w,
-                                    left: 85.w,
-                                    bottom: 10.h,
-                                    //right and bottom are set to 5% of the screen width and 18% of the screen height respectively
-                                    //to position the chip at the top right corner of the card
-                                    child: Material(
-                                      //Material widget to give the chip a shadow
-                                      elevation: 3,
-                                      borderRadius: BorderRadius.circular(13),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          color: HexColor("#C9F560"),
-                                          borderRadius:
-                                              BorderRadius.circular(13),
-                                        ),
-                                        height: 21,
-                                        width: 52,
-                                        child: Center(
-                                            child: Text(
-                                          'Active',
-                                          style: GoogleFonts.chivo(
-                                            color: Colors.black,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        )),
-                                      ),
-                                    )),
+                                // Positioned(
+                                //     //Positioned widget to position the Event Chip
+                                //     right: 5.w,
+                                //     left: 85.w,
+                                //     bottom: 10.h,
+                                //     //right and bottom are set to 5% of the screen width and 18% of the screen height respectively
+                                //     //to position the chip at the top right corner of the card
+                                //     child: Material(
+                                //       //Material widget to give the chip a shadow
+                                //       elevation: 3,
+                                //       borderRadius: BorderRadius.circular(13),
+                                //       child: Container(
+                                //         decoration: BoxDecoration(
+                                //           color: HexColor("#C9F560"),
+                                //           borderRadius:
+                                //               BorderRadius.circular(13),
+                                //         ),
+                                //         height: 21,
+                                //         width: 52,
+                                //         child: Center(
+                                //             child: Text(
+                                //           'Active',
+                                //           style: GoogleFonts.chivo(
+                                //             color: Colors.black,
+                                //             fontSize: 14,
+                                //             fontWeight: FontWeight.w400,
+                                //           ),
+                                //         )),
+                                //       ),
+                                //     )),
                               ],
                             )
                           ],
