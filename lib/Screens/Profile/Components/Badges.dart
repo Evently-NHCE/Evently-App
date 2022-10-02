@@ -23,72 +23,70 @@ class _BadgesSectionState extends State<BadgesSection> {
     _availableBadges.removeWhere((element) => _earnedBadges.contains(element));
 
     return SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.only(left: 5.w),
-        child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.only(
-                bottom: 3, // Space between underline and text
-              ),
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                color: HexColor("#8246DE"),
-                width: 1.0, // Underline thickness
-              ))),
-              child: Text(
-                'EARNED BADGES',
-                style: GoogleFonts.chivo(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                ),
+      padding: EdgeInsets.only(left: 5.w),
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.only(
+              bottom: 3, // Space between underline and text
+            ),
+            decoration: BoxDecoration(
+                border: Border(
+                    bottom: BorderSide(
+              color: HexColor("#8246DE"),
+              width: 1.0, // Underline thickness
+            ))),
+            child: Text(
+              'EARNED BADGES',
+              style: GoogleFonts.chivo(
+                color: Colors.white,
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
-              height: 10,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          GridView.count(
+              primary: false,
+              shrinkWrap: true,
+              crossAxisCount: 3,
+              children: List.generate(
+                  earnedBadges.length,
+                  (index) => BadgeCard(
+                      BadgeCardType.Earned, _earnedBadges[index].icon))),
+          Container(
+            padding: EdgeInsets.only(
+              bottom: 3, // Space between underline and text
             ),
-            GridView.count(
-                primary: false,
-                shrinkWrap: true,
-                crossAxisCount: 3,
-                children: List.generate(
-                    earnedBadges.length,
-                    (index) => BadgeCard(
-                        BadgeCardType.Earned, _earnedBadges[index].icon))),
-            Container(
-              padding: EdgeInsets.only(
-                bottom: 3, // Space between underline and text
+            decoration: BoxDecoration(
+                border: Border(
+                    bottom: BorderSide(
+              color: HexColor("#8246DE"),
+              width: 1.0, // Underline thickness
+            ))),
+            child: Text(
+              'AVAILABLE BADGES',
+              style: GoogleFonts.chivo(
+                color: Colors.white,
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
               ),
-              decoration: BoxDecoration(
-                  border: Border(
-                      bottom: BorderSide(
-                color: HexColor("#8246DE"),
-                width: 1.0, // Underline thickness
-              ))),
-              child: Text(
-                'AVAILABLE BADGES',
-                style: GoogleFonts.chivo(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
             ),
-            SizedBox(
-              height: 10,
-            ),
-            GridView.count(
-                shrinkWrap: true,
-                primary: false,
-                crossAxisCount: 3,
-                children: List.generate(
-                    _availableBadges.length,
-                    (index) => BadgeCard(BadgeCardType.Available,
-                        _availableBadges[index].icon))),
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          GridView.count(
+              shrinkWrap: true,
+              primary: false,
+              crossAxisCount: 3,
+              children: List.generate(
+                  _availableBadges.length,
+                  (index) => BadgeCard(
+                      BadgeCardType.Available, _availableBadges[index].icon))),
+        ],
       ),
     );
   }
