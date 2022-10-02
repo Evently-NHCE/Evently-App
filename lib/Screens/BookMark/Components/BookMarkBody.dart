@@ -2,6 +2,7 @@ import 'package:evently/Screens/BookMark/Components/BookMarkCard.dart';
 import 'package:evently/controllers/BookmarkController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
 class BookMarkBody extends StatefulWidget {
@@ -18,17 +19,27 @@ class _BookMarkBodyState extends State<BookMarkBody> {
     int length = bookmarkController.bookmarks.length;
     return Padding(
       padding: EdgeInsets.only(top: 5.h),
-      child: ListView.builder(
-        itemCount: length,
-        itemBuilder: (context, index) {
-          return BookMarkCard(
-              index: index,
-              onTap: () {
-                setState(() {
-                  bookmarkController.bookmarks.removeAt(index);
-                });
-              });
-        },
+      child: Padding(
+        padding: EdgeInsets.only(bottom: 18.h),
+        child: length != 0
+            ? ListView.builder(
+                itemCount: length,
+                itemBuilder: (context, index) {
+                  return BookMarkCard(
+                      index: index,
+                      onTap: () {
+                        setState(() {
+                          bookmarkController.bookmarks.removeAt(index);
+                        });
+                      });
+                },
+              )
+            : Center(
+                child: Text(
+                'You have no bookmarks :(',
+                style: GoogleFonts.chivo(
+                    color: Colors.white, fontWeight: FontWeight.w400),
+              )),
       ),
     );
   }
