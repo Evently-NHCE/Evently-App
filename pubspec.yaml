@@ -49,6 +49,7 @@ dependencies:
   introduction_screen: ^3.0.2
   lottie: ^1.4.3
   sizer: ^2.0.15
+  syncfusion_flutter_calendar: ^20.3.47
   text_scroll: ^0.1.0
 
 dev_dependencies:
