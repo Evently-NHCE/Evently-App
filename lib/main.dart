@@ -26,6 +26,7 @@ void main() {
   ]).then((value) => runApp(MyApp()));
 
   runApp(MyApp());
+  // runApp(GetMaterialApp(home: MyApp()));
 }
 
 // CAlculate the height of the screen
