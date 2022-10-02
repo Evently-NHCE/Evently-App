@@ -28,6 +28,7 @@ class _BookMarkCardState extends State<BookMarkCard> {
     int index = widget.index;
     final BookmarkController bookmarkController = Get.put(BookmarkController());
     List bookmarks = bookmarkController.bookmarks;
+    bool expired = bookmarks[index]['expired'];
     return Column(
       children: [
         Material(
@@ -113,13 +114,15 @@ class _BookMarkCardState extends State<BookMarkCard> {
                         height: 21,
                         width: 14.w,
                         decoration: BoxDecoration(
-                            color: HexColor("#C9F560"),
+                            color: expired
+                                ? Colors.redAccent
+                                : HexColor("#C9F560"),
                             borderRadius: BorderRadius.circular(12)),
                         child: Center(
                             child: Text(
-                          'Expired',
+                          expired ? 'Expired' : 'Active',
                           style: GoogleFonts.chivo(
-                              color: Colors.black,
+                              color: expired ? Colors.white : Colors.black,
                               fontSize: 12,
                               fontWeight: FontWeight.w400),
                         )),
