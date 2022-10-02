@@ -97,7 +97,7 @@ class _BookMarkCardState extends State<BookMarkCard> {
                         padding: const EdgeInsets.only(top: 10),
                         child: GestureDetector(
                           onTap: () {
-                            //   print('removing ${index}');
+                            // print('removing ${index}');
 
                             widget.onTap();
                           },

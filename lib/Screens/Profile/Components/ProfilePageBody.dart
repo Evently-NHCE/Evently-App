@@ -104,12 +104,7 @@ class _ProfilePageBodyState extends State<ProfilePageBody> {
           ),
           Expanded(
             child: SingleChildScrollView(
-              child: Padding(
-                  padding: EdgeInsets.only(
-                    top: 0.h,
-                    left: 0.w,
-                  ),
-                  child: tabWidgets[tabIndex]),
+              child: tabWidgets[tabIndex],
             ),
           ),
         ],
