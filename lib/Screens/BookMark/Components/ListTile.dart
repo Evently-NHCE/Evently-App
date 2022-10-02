@@ -9,7 +9,7 @@ enum ListTileType {
 }
 
 Widget ListTileCard(ListTileType type, var bookmark) {
-  print(bookmark);
+  // print(bookmark);
   late String icon;
   late String title;
   late String subtitle;

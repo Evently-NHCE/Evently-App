@@ -1,3 +1,5 @@
+import 'package:evently/Screens/Profile/Components/BadgesCard.dart';
+import 'package:evently/Screens/Profile/Components/Model/BadgesChoice.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:heroicons/heroicons.dart';
@@ -19,6 +21,12 @@ class _BadgesSectionState extends State<BadgesSection> {
 
   @override
   Widget build(BuildContext context) {
+    List _availableBadges = allBadges;
+    List _earnedBadges = earnedBadges;
+
+    // Removes earned badges from allBadges and stores it in _availableBadges
+    _availableBadges.removeWhere((element) => _earnedBadges.contains(element));
+
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -41,16 +49,17 @@ class _BadgesSectionState extends State<BadgesSection> {
               ),
             ),
           ),
-          Container(
-            child: Row(
-              children: List.generate(
-                3,
-                (index) => Expanded(
-                  child: Image.asset('assets/Images/badgebg.png'),
-                ),
-              ),
-            ),
+          SizedBox(
+            height: 10,
           ),
+          GridView.count(
+              primary: false,
+              shrinkWrap: true,
+              crossAxisCount: 3,
+              children: List.generate(
+                  earnedBadges.length,
+                  (index) => BadgeCard(
+                      BadgeCardType.Earned, _earnedBadges[index].icon))),
           Container(
             padding: EdgeInsets.only(
               bottom: 3, // Space between underline and text
@@ -70,68 +79,19 @@ class _BadgesSectionState extends State<BadgesSection> {
               ),
             ),
           ),
-          Container(
-            child: Row(
-              children: List.generate(
-                3,
-                (index) => Expanded(
-                  child: Image.asset('assets/Images/badgeplain.png'),
-                ),
-              ),
-            ),
+          SizedBox(
+            height: 10,
           ),
-          Container(
-            child: Row(
+          GridView.count(
+              shrinkWrap: true,
+              primary: false,
+              crossAxisCount: 3,
               children: List.generate(
-                3,
-                (index) => Expanded(
-                  child: Image.asset('assets/Images/badgeplain.png'),
-                ),
-              ),
-            ),
-          ),
-          Container(
-            child: Row(
-              children: List.generate(
-                3,
-                (index) => Expanded(
-                  child: Image.asset('assets/Images/badgeplain.png'),
-                ),
-              ),
-            ),
-          ),
-          Container(
-            child: Row(
-              children: List.generate(
-                3,
-                (index) => Expanded(
-                  child: Image.asset('assets/Images/badgeplain.png'),
-                ),
-              ),
-            ),
-          ),
-          // GridView.count(
-          //   crossAxisCount: 3,
-          //   children: List.generate(12, (index) {
-          //     return Container(
-          //       child: Image.asset('assets/Images/badgeplain.png'),
-          //     );
-          //   }),
-          // )
-          // build2DArrayOfBadges(3, 12, 'assets/Images/badgeplain.png'),
+                  _availableBadges.length,
+                  (index) => BadgeCard(
+                      BadgeCardType.Available, _availableBadges[index].icon))),
         ],
       ),
     );
   }
 }
-
-// GridView build2DArrayOfBadges(int rowCount, int numItems, String imageFile) {
-//   return GridView.count(
-//     crossAxisCount: rowCount,
-//     children: List.generate(numItems, (index) {
-//       return Expanded(
-//         child: Image.asset(imageFile),
-//       );
-//     }),
-//   );
-// }
