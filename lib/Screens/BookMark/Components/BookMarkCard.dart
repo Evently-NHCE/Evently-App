@@ -3,10 +3,8 @@ import 'package:evently/controllers/BookmarkController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:heroicons/heroicons.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
-import 'package:text_scroll/text_scroll.dart';
 
 class BookMarkCard extends StatefulWidget {
   final Function() onTap;

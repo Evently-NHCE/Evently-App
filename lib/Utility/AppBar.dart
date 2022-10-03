@@ -1,5 +1,7 @@
+import 'package:evently/Screens/AbotUs%20Page/AboutUs.dart';
 import 'package:evently/Utility/Constants.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:sizer/sizer.dart';
@@ -10,7 +12,9 @@ AppBar appBar(String title) {
     backgroundColor: Colors.transparent,
     elevation: 0,
     leading: InkWell(
-      onTap: () {},
+      onTap: () {
+        Get.to(AboutUs());
+      },
       child: Container(
           margin: const EdgeInsets.all(12),
           decoration: BoxDecoration(

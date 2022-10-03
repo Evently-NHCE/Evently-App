@@ -2,7 +2,6 @@ import 'package:evently/Screens/Profile/Components/BadgesCard.dart';
 import 'package:evently/Screens/Profile/Components/Model/BadgesChoice.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:heroicons/heroicons.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
