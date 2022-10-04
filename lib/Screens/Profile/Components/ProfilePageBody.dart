@@ -6,7 +6,6 @@ import 'package:evently/Screens/Profile/Components/ProfileCard.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:heroicons/heroicons.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
@@ -104,12 +103,7 @@ class _ProfilePageBodyState extends State<ProfilePageBody> {
           ),
           Expanded(
             child: SingleChildScrollView(
-              child: Padding(
-                  padding: EdgeInsets.only(
-                    top: 1.h,
-                    left: 3.w,
-                  ),
-                  child: tabWidgets[tabIndex]),
+              child: tabWidgets[tabIndex],
             ),
           ),
         ],

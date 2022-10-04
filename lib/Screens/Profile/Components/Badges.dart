@@ -2,8 +2,8 @@ import 'package:evently/Screens/Profile/Components/BadgesCard.dart';
 import 'package:evently/Screens/Profile/Components/Model/BadgesChoice.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:heroicons/heroicons.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:sizer/sizer.dart';
 
 class BadgesSection extends StatefulWidget {
   const BadgesSection({Key? key}) : super(key: key);
@@ -22,6 +22,7 @@ class _BadgesSectionState extends State<BadgesSection> {
     _availableBadges.removeWhere((element) => _earnedBadges.contains(element));
 
     return SingleChildScrollView(
+      padding: EdgeInsets.only(left: 5.w),
       child: Column(
         children: [
           Container(
@@ -47,16 +48,20 @@ class _BadgesSectionState extends State<BadgesSection> {
             height: 10,
           ),
           GridView.count(
-              primary: false,
-              shrinkWrap: true,
-              crossAxisCount: 3,
-              children: List.generate(
-                  earnedBadges.length,
-                  (index) => BadgeCard(
-                      BadgeCardType.Earned,
-                      _earnedBadges[index].icon,
-                      context,
-                      _availableBadges[index].msg))), // Passing badge msg here
+            primary: false,
+            shrinkWrap: true,
+            crossAxisCount: 3,
+            children: List.generate(
+              earnedBadges.length,
+              (index) => BadgeCard(
+                BadgeCardType.Earned,
+                _earnedBadges[index].icon,
+                context,
+                _earnedBadges[index].msg,
+                _earnedBadges[index].title,
+              ),
+            ),
+          ),
           Container(
             padding: EdgeInsets.only(
               bottom: 3, // Space between underline and text
@@ -80,6 +85,7 @@ class _BadgesSectionState extends State<BadgesSection> {
             height: 10,
           ),
           GridView.count(
+<<<<<<< HEAD
               shrinkWrap: true,
               primary: false,
               crossAxisCount: 3,
@@ -91,6 +97,22 @@ class _BadgesSectionState extends State<BadgesSection> {
                       context,
                       _availableBadges[index]
                           .msg))), // Passing badge msg here too
+=======
+            shrinkWrap: true,
+            primary: false,
+            crossAxisCount: 3,
+            children: List.generate(
+              _availableBadges.length,
+              (index) => BadgeCard(
+                BadgeCardType.Available,
+                _availableBadges[index].icon,
+                context,
+                _availableBadges[index].msg,
+                _availableBadges[index].title,
+              ),
+            ),
+          ),
+>>>>>>> 5dbedf71b98f96335f988074e6831b518d80f618
         ],
       ),
     );

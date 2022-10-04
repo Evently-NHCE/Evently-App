@@ -1,7 +1,6 @@
 import 'package:evently/Screens/Navigation/Navigation.dart';
 import 'package:evently/Screens/Onboarding/Models/Model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:sizer/sizer.dart';
