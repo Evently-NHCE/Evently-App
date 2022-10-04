@@ -85,19 +85,6 @@ class _BadgesSectionState extends State<BadgesSection> {
             height: 10,
           ),
           GridView.count(
-<<<<<<< HEAD
-              shrinkWrap: true,
-              primary: false,
-              crossAxisCount: 3,
-              children: List.generate(
-                  _availableBadges.length,
-                  (index) => BadgeCard(
-                      BadgeCardType.Available,
-                      _availableBadges[index].icon,
-                      context,
-                      _availableBadges[index]
-                          .msg))), // Passing badge msg here too
-=======
             shrinkWrap: true,
             primary: false,
             crossAxisCount: 3,
@@ -112,7 +99,6 @@ class _BadgesSectionState extends State<BadgesSection> {
               ),
             ),
           ),
->>>>>>> 5dbedf71b98f96335f988074e6831b518d80f618
         ],
       ),
     );
