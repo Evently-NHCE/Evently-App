@@ -52,8 +52,11 @@ class _BadgesSectionState extends State<BadgesSection> {
               crossAxisCount: 3,
               children: List.generate(
                   earnedBadges.length,
-                  (index) => BadgeCard(BadgeCardType.Earned,
-                      _earnedBadges[index].icon, context))),
+                  (index) => BadgeCard(
+                      BadgeCardType.Earned,
+                      _earnedBadges[index].icon,
+                      context,
+                      _availableBadges[index].msg))), // Passing badge msg here
           Container(
             padding: EdgeInsets.only(
               bottom: 3, // Space between underline and text
@@ -82,8 +85,12 @@ class _BadgesSectionState extends State<BadgesSection> {
               crossAxisCount: 3,
               children: List.generate(
                   _availableBadges.length,
-                  (index) => BadgeCard(BadgeCardType.Available,
-                      _availableBadges[index].icon, context))),
+                  (index) => BadgeCard(
+                      BadgeCardType.Available,
+                      _availableBadges[index].icon,
+                      context,
+                      _availableBadges[index]
+                          .msg))), // Passing badge msg here too
         ],
       ),
     );

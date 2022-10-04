@@ -8,7 +8,7 @@ enum BadgeCardType {
   Available,
 }
 
-Widget BadgeCard(BadgeCardType type, IconData icon, context) {
+Widget BadgeCard(BadgeCardType type, IconData icon, context, String badgeMsg) {
   late String badge;
   if (type == BadgeCardType.Earned) {
     badge = 'assets/Images/badgebg.png';
@@ -31,11 +31,11 @@ Widget BadgeCard(BadgeCardType type, IconData icon, context) {
         ],
       ),
       onTap: () {
-        _showMyDialog(context);
+        _showMyDialog(context, badgeMsg); // Passing it to the dialog
       });
 }
 
-Future<void> _showMyDialog(context) async {
+Future<void> _showMyDialog(context, String badgeMsg) async {
   return showDialog<void>(
     context: context,
     barrierDismissible: true, // user must tap button!
@@ -93,7 +93,7 @@ Future<void> _showMyDialog(context) async {
             Transform.translate(
               offset: Offset(70, 150),
               child: Text(
-                'You have successfully took \n part in 4+ events till now.',
+                badgeMsg, // Reading it from the dialogue
                 style: GoogleFonts.poppins(
                   fontSize: 14,
                   color: HexColor("#969696"),
