@@ -24,7 +24,7 @@ class BookmarkController extends GetxController {
       'date': 'Tue , Nov 22 , 2022',
       'time': '02:00 PM - 4:00 PM',
       'location': '401 , CSE Department, Second Floor',
-      'expired': false,
+      'expired': true,
     }
   ].obs;
 
