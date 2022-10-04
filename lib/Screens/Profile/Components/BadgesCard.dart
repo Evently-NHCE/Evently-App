@@ -8,7 +8,8 @@ enum BadgeCardType {
   Available,
 }
 
-Widget BadgeCard(BadgeCardType type, IconData icon, context) {
+Widget BadgeCard(
+    BadgeCardType type, IconData icon, context, String msg, String title) {
   late String badge;
   if (type == BadgeCardType.Earned) {
     badge = 'assets/Images/badgebg.png';
@@ -31,11 +32,12 @@ Widget BadgeCard(BadgeCardType type, IconData icon, context) {
         ],
       ),
       onTap: () {
-        _showMyDialog(context);
+        _showMyDialog(context, msg, title, icon);
       });
 }
 
-Future<void> _showMyDialog(context) async {
+Future<void> _showMyDialog(
+    context, String msg, String title, IconData icon) async {
   return showDialog<void>(
     context: context,
     barrierDismissible: true, // user must tap button!
@@ -51,6 +53,72 @@ Future<void> _showMyDialog(context) async {
                 color: HexColor("#3D4552"),
                 borderRadius: BorderRadius.circular(30),
               ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 90,
+                  ),
+                  Text(
+                    'BADGE',
+                    style: GoogleFonts.chivo(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    title,
+                    style: GoogleFonts.chivo(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: HexColor("#C9F560"),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    msg,
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.poppins(
+                      fontSize: 14,
+                      color: HexColor("#969696"),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 35,
+                  ),
+                  SizedBox(
+                    height: 42,
+                    width: 137,
+                    child: TextButton(
+                      child: Text(
+                        'Done',
+                        style: GoogleFonts.poppins(
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all<HexColor>(
+                            HexColor("#7862F7"),
+                          ),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(40.0),
+                          ))),
+                    ),
+                  ),
+                ],
+              ),
             ),
             Transform.translate(
               offset: Offset(90, -70),
@@ -60,71 +128,12 @@ Future<void> _showMyDialog(context) async {
                   Transform.translate(
                     offset: Offset(42, 42),
                     child: Icon(
-                      Icons.wallet,
+                      icon,
                       color: Colors.white,
                       size: 45,
                     ),
                   ),
                 ],
-              ),
-            ),
-            Transform.translate(
-              offset: Offset(135, 80),
-              child: Text(
-                'BADGE',
-                style: GoogleFonts.chivo(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            Transform.translate(
-              offset: Offset(100, 110),
-              child: Text(
-                'STREAK CHAMP',
-                style: GoogleFonts.chivo(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                  color: HexColor("#C9F560"),
-                ),
-              ),
-            ),
-            Transform.translate(
-              offset: Offset(70, 150),
-              child: Text(
-                'You have successfully took \n part in 4+ events till now.',
-                style: GoogleFonts.poppins(
-                  fontSize: 14,
-                  color: HexColor("#969696"),
-                ),
-              ),
-            ),
-            Transform.translate(
-              offset: Offset(90, 220),
-              child: SizedBox(
-                height: 42,
-                width: 137,
-                child: TextButton(
-                  child: Text(
-                    'Done',
-                    style: GoogleFonts.poppins(
-                      fontSize: 16,
-                      color: Colors.white,
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<HexColor>(
-                        HexColor("#7862F7"),
-                      ),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(40.0),
-                      ))),
-                ),
               ),
             ),
           ],

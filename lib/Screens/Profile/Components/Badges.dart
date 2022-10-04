@@ -47,13 +47,20 @@ class _BadgesSectionState extends State<BadgesSection> {
             height: 10,
           ),
           GridView.count(
-              primary: false,
-              shrinkWrap: true,
-              crossAxisCount: 3,
-              children: List.generate(
-                  earnedBadges.length,
-                  (index) => BadgeCard(BadgeCardType.Earned,
-                      _earnedBadges[index].icon, context))),
+            primary: false,
+            shrinkWrap: true,
+            crossAxisCount: 3,
+            children: List.generate(
+              earnedBadges.length,
+              (index) => BadgeCard(
+                BadgeCardType.Earned,
+                _earnedBadges[index].icon,
+                context,
+                _earnedBadges[index].msg,
+                _earnedBadges[index].title,
+              ),
+            ),
+          ),
           Container(
             padding: EdgeInsets.only(
               bottom: 3, // Space between underline and text
@@ -77,13 +84,20 @@ class _BadgesSectionState extends State<BadgesSection> {
             height: 10,
           ),
           GridView.count(
-              shrinkWrap: true,
-              primary: false,
-              crossAxisCount: 3,
-              children: List.generate(
-                  _availableBadges.length,
-                  (index) => BadgeCard(BadgeCardType.Available,
-                      _availableBadges[index].icon, context))),
+            shrinkWrap: true,
+            primary: false,
+            crossAxisCount: 3,
+            children: List.generate(
+              _availableBadges.length,
+              (index) => BadgeCard(
+                BadgeCardType.Available,
+                _availableBadges[index].icon,
+                context,
+                _availableBadges[index].msg,
+                _availableBadges[index].title,
+              ),
+            ),
+          ),
         ],
       ),
     );
