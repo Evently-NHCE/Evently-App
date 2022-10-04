@@ -13,12 +13,6 @@ class BadgesSection extends StatefulWidget {
 }
 
 class _BadgesSectionState extends State<BadgesSection> {
-  List<HeroIcon> icons = [
-    HeroIcon(HeroIcons.search),
-    HeroIcon(HeroIcons.fire),
-    HeroIcon(HeroIcons.flag),
-  ];
-
   @override
   Widget build(BuildContext context) {
     List _availableBadges = allBadges;
@@ -58,8 +52,8 @@ class _BadgesSectionState extends State<BadgesSection> {
               crossAxisCount: 3,
               children: List.generate(
                   earnedBadges.length,
-                  (index) => BadgeCard(
-                      BadgeCardType.Earned, _earnedBadges[index].icon))),
+                  (index) => BadgeCard(BadgeCardType.Earned,
+                      _earnedBadges[index].icon, context))),
           Container(
             padding: EdgeInsets.only(
               bottom: 3, // Space between underline and text
@@ -88,8 +82,8 @@ class _BadgesSectionState extends State<BadgesSection> {
               crossAxisCount: 3,
               children: List.generate(
                   _availableBadges.length,
-                  (index) => BadgeCard(
-                      BadgeCardType.Available, _availableBadges[index].icon))),
+                  (index) => BadgeCard(BadgeCardType.Available,
+                      _availableBadges[index].icon, context))),
         ],
       ),
     );
