@@ -1,13 +1,10 @@
 import 'package:antdesign_icons/antdesign_icons.dart';
 import 'package:evently/Screens/AbotUs%20Page/Components/RoundedRectIcon.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import 'CustomDialog.dart';
 
 class CircleAvatarCard extends StatelessWidget {
   String name;

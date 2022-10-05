@@ -1,5 +1,4 @@
 //import 'package:device_preview_community/device_preview_community.dart';
-import 'package:evently/Screens/AbotUs%20Page/AboutUs.dart';
 import 'package:evently/Screens/DataForm/DataForm.dart';
 
 import 'package:evently/Screens/Navigation/Navigation.dart';
@@ -53,7 +52,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             fontFamily: GoogleFonts.chivo().fontFamily,
             scaffoldBackgroundColor: kBackgroundColor),
-       
+        // home: AboutUs(),
         home: Navigation(),
       ),
     );

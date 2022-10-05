@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:sizer/sizer.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'CustomDialog.dart';
 
@@ -250,10 +249,4 @@ void openVarunsDialog() {
     img: "assets/Images/Varun.png",
     tags: saifsTags,
   ));
-}
-
-Future<void> _launchUrl(String url) async {
-  if (!await launchUrl(Uri.parse(url))) {
-    throw 'Could not launch $url';
-  }
 }

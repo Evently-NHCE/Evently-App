@@ -1,12 +1,10 @@
 import 'package:evently/Screens/Profile/Components/About.dart';
 import 'package:evently/Screens/Profile/Components/Attendance.dart';
 import 'package:evently/Screens/Profile/Components/Badges.dart';
-import 'package:evently/Screens/Profile/Components/Certificate.dart';
 import 'package:evently/Screens/Profile/Components/ProfileCard.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:heroicons/heroicons.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 

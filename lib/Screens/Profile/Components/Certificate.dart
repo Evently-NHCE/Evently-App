@@ -1,9 +1,7 @@
 import 'package:antdesign_icons/antdesign_icons.dart';
-import 'package:evently/Screens/EventPass/EventPass.dart';
-import 'package:evently/Utility/Constants.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
