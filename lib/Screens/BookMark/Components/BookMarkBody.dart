@@ -18,9 +18,9 @@ class _BookMarkBodyState extends State<BookMarkBody> {
   Widget build(BuildContext context) {
     int length = bookmarkController.bookmarks.length;
     return Padding(
-      padding: EdgeInsets.only(top: 5.h),
+      padding: EdgeInsets.only(top: 2.h),
       child: Padding(
-        padding: EdgeInsets.only(bottom: 18.h),
+        padding: EdgeInsets.only(bottom: 15.h),
         child: length != 0
             ? ListView.builder(
                 itemCount: length,

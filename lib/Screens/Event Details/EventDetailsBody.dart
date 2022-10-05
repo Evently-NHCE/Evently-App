@@ -31,7 +31,7 @@ class EventDetailsBody extends StatelessWidget {
                   Navigator.pop(context);
                 },
                 child: CircleIcons(
-                  icon: HeroIcons.arrowCircleLeft,
+                  icon: HeroIcons.arrowLeftCircle,
                 ),
               ),
             ),
@@ -92,7 +92,7 @@ class EventDetailsBody extends StatelessWidget {
                                   ),
                                   SizedBox(width: 2.w),
                                   HeroIcon(
-                                    HeroIcons.badgeCheck,
+                                    HeroIcons.checkBadge,
                                     color: AppColors.neoncolor,
                                   )
                                 ],
@@ -124,7 +124,7 @@ class EventDetailsBody extends StatelessWidget {
                             SizedBox(height: 2.h),
                             Row(
                               children: [
-                                CircleIcons(icon: HeroIcons.locationMarker),
+                                CircleIcons(icon: HeroIcons.mapPin),
                                 SizedBox(width: 2.w),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -148,7 +148,7 @@ class EventDetailsBody extends StatelessWidget {
                             SizedBox(height: 2.h),
                             Row(
                               children: [
-                                CircleIcons(icon: HeroIcons.officeBuilding),
+                                CircleIcons(icon: HeroIcons.buildingOffice),
                                 SizedBox(width: 2.w),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -202,7 +202,8 @@ class EventDetailsBody extends StatelessWidget {
                             SizedBox(height: 2.h),
                             Row(
                               children: [
-                                CircleIcons(icon: HeroIcons.login),
+                                CircleIcons(
+                                    icon: HeroIcons.arrowRightOnRectangle),
                                 SizedBox(width: 2.w),
                                 Column(
                                   mainAxisAlignment: MainAxisAlignment.start,

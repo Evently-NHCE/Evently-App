@@ -37,7 +37,7 @@ class Navigation extends StatelessWidget {
                   icon: const HeroIcon(HeroIcons.home),
                 ),
                 CustomNavigationBarItem(
-                  icon: const HeroIcon(HeroIcons.collection),
+                  icon: const HeroIcon(HeroIcons.rectangleStack),
                 ),
                 CustomNavigationBarItem(
                   icon: const HeroIcon(HeroIcons.bookmark),
