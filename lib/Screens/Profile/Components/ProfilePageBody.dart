@@ -10,6 +10,8 @@ import 'package:heroicons/heroicons.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
+import 'CertificateBody.dart';
+
 class ProfilePageBody extends StatefulWidget {
   const ProfilePageBody({Key? key}) : super(key: key);
 
@@ -23,7 +25,7 @@ class _ProfilePageBodyState extends State<ProfilePageBody> {
   List tabWidgets = [
     AboutSection(),
     BadgesSection(),
-    CertificateSection(),
+    CertificatePageBody(),
     AttendanceSection()
   ];
   @override
