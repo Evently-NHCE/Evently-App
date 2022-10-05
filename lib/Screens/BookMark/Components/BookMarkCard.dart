@@ -35,7 +35,7 @@ class _BookMarkCardState extends State<BookMarkCard> {
     return Container(
       margin: EdgeInsets.only(
         bottom: 2.h,
-        left: 2.w,
+        left: 3.w,
       ),
       decoration: BoxDecoration(
         boxShadow: [
@@ -56,11 +56,13 @@ class _BookMarkCardState extends State<BookMarkCard> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  height: 14.h,
+                  height: 15.h,
                   width: 28.w,
-                  margin: EdgeInsets.zero,
+                  margin: EdgeInsets.only(top: 3.h),
                   padding: EdgeInsets.zero,
                   decoration: BoxDecoration(
                     boxShadow: [
@@ -74,12 +76,11 @@ class _BookMarkCardState extends State<BookMarkCard> {
                     //color: Colors.black,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Container(
-                    height: 20.h,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image:
-                                AssetImage('assets/Images/bookmarkImg.png'))),
+                  child: FittedBox(
+                    child: Image.asset(
+                      'assets/Images/bookmarkImg.png',
+                      fit: BoxFit.fitWidth,
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -89,7 +90,7 @@ class _BookMarkCardState extends State<BookMarkCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
-                      height: 10,
+                      height: 2.h,
                     ),
                     Text(bookmarks[index]['title'],
                         style: GoogleFonts.poppins(
