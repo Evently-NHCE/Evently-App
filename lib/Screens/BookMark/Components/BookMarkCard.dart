@@ -52,17 +52,15 @@ class _BookMarkCardState extends State<BookMarkCard> {
       child: Padding(
         padding: EdgeInsets.all(8),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
                   height: 15.h,
                   width: 28.w,
-                  margin: EdgeInsets.only(top: 3.h),
+                  margin: EdgeInsets.zero,
                   padding: EdgeInsets.zero,
                   decoration: BoxDecoration(
                     boxShadow: [
@@ -76,10 +74,11 @@ class _BookMarkCardState extends State<BookMarkCard> {
                     //color: Colors.black,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: FittedBox(
-                    child: Image.asset(
-                      'assets/Images/bookmarkImg.png',
-                      fit: BoxFit.fitWidth,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.network(
+                      "https://picsum.photos/250?image=9",
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
@@ -127,7 +126,7 @@ class _BookMarkCardState extends State<BookMarkCard> {
                       ),
                     ),
                     SizedBox(
-                      height: 2.h,
+                      height: 1.h,
                     ),
                     Container(
                       child: Row(
