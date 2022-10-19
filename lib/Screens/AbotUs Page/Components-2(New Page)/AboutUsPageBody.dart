@@ -33,7 +33,7 @@ class _AboutUsPageBodyState extends State<AboutUsPageBody> {
         //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            height: 32.h,
+            height: 36.h,
             width: 100.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
@@ -43,7 +43,7 @@ class _AboutUsPageBodyState extends State<AboutUsPageBody> {
               color: HexColor("#3D4552"),
             ),
             child: Padding(
-              padding: EdgeInsets.only(left: 2.w, right: 2.w, top: 2.h),
+              padding: EdgeInsets.only(left: 3.w, right: 3.w, top: 2.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -64,7 +64,7 @@ class _AboutUsPageBodyState extends State<AboutUsPageBody> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            width: 75.w,
+                            width: 70.w,
                             height: 4.h,
                             //color: Colors.green,
                             child: Text(
@@ -115,12 +115,12 @@ class _AboutUsPageBodyState extends State<AboutUsPageBody> {
                     width: 90.w,
                     //  color: Colors.yellow,
                     child: Text(
-                      "Mobile Application Development Club is to advocate for the education and creation of modern applications within the mobile space. Through the advancement of programming skills found within the subset of mobile development and the utilization of small teams to create meaningful projects, the Mobile Application Development Club seeks to enrich mobile development activity on campus for all students of NHCE. This provides students with the opportunity to see their ideas come to fruition, forming a new community built on creativity, teamwork, entrepreneurship, and learning.",
+                      "Mobile Application Development Club is to advocate for the education and creation of modern applications within the mobile space. Through the advancement of programming skills found within the subset of mobile development and the utilization of small teams to create meaningful projects, the Mobile Application Development Club seeks to enrich mobile development activity on campus for all students of NHCE.",
                       maxLines: 18,
-                      textAlign: TextAlign.left,
+                      textAlign: TextAlign.justify,
                       style: GoogleFonts.poppins(
                           color: Colors.white,
-                          fontSize: 8.sp,
+                          fontSize: 10.sp,
                           letterSpacing: 0,
                           fontWeight: FontWeight.bold),
                     ),
