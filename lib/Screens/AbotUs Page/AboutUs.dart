@@ -1,10 +1,11 @@
-import 'package:evently/Screens/AbotUs%20Page/Components/AboutUsBody.dart';
+import 'package:evently/Screens/AbotUs%20Page/Components-1(Old%20Page)/AboutUsBody.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../Utility/Constants.dart';
+import 'Components-2(New Page)/AboutUsPageBody.dart';
 
 class AboutUs extends StatelessWidget {
   const AboutUs({Key? key}) : super(key: key);
@@ -14,24 +15,16 @@ class AboutUs extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.secondaryColor,
         elevation: 0,
-        leading: GestureDetector(
-          onTap: () {
-            //  drawerController.openDrawer();
-            Navigator.of(context).pop();
+        leading: IconButton(
+          icon: HeroIcon(HeroIcons.chevronLeft, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
           },
-          child: Container(
-              margin:
-                  EdgeInsets.only(left: 2.w, top: 1.h, bottom: 1.h, right: 2.w),
-              decoration: BoxDecoration(
-                color: AppColors.secondaryColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: HeroIcon(HeroIcons.chevronLeft, color: Colors.white)),
         ),
         title: Text(
-          "Key Members",
+          "About Us",
           style: GoogleFonts.poppins(
               //   color: Color.fromRGBO(65, 84, 252, 0.44),
               fontSize: 20,
@@ -39,7 +32,7 @@ class AboutUs extends StatelessWidget {
               fontWeight: FontWeight.bold),
         ),
       ),
-      body: AboutUsBody(),
+      body: AboutUsPageBody(),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:antdesign_icons/antdesign_icons.dart';
-import 'package:evently/Screens/AbotUs%20Page/Components/RoundedRectIcon.dart';
+import 'package:evently/Screens/AbotUs%20Page/Components-1(Old%20Page)/RoundedRectIcon.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
