@@ -30,7 +30,10 @@ class MyEventsCard extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => EventPass()));
+            context,
+            MaterialPageRoute(
+                builder: (context) => EventPass(
+                    eventTitle: eventTitle, backgroundImage: backgroundImage)));
       },
       child: Center(
         //Center widget to center the card
@@ -64,7 +67,7 @@ class MyEventsCard extends StatelessWidget {
                           ),
                           child: Container(
                             child: Image.asset(
-                              "assets/Images/bg.png",
+                              backgroundImage,
                               fit: BoxFit.cover,
                               //fit the image to the container
                             ),

@@ -14,35 +14,25 @@ class _MyEventBodyState extends State<MyEventBody> {
 //List<String> because we are using the same index for all the lists
 
   List<String> eventTitles = [
-    "Code-a-Pookkalam",
-    "IEEEE",
-    "MD CLub Hack",
-    "Drama Club"
+    "Competitive Programming",
+    "HACKZON",
   ];
   List<String> dates = [
     "Sat,Feb 20,2022",
     "Sat,Feb 20,2022",
-    "Sat,Feb 20,2022",
-    "Sat,Feb 20,2022"
   ];
   List<String> times = [
     "12:00 AM - 2:00 PM",
-    "12:00 AM - 2:00 PM",
-    "12:00 AM - 2:00 PM",
-    "12:00 AM - 2:00 PM"
+    "1:00 PM - 4:00 PM",
   ];
   List<String> locations = ["NHCE", "NHCE", "NHCE", "NHCE"];
   List<String> EventHall = [
     "Falconry, CSE Department,Second Floor",
     "Falconry, CSE Department,Second Floor",
-    "Falconry, CSE Department,Second Floor",
-    "Falconry, CSE Department,Second Floor"
   ];
   List<String> assetpaths = [
-    "assets/Images/e2.jpeg",
-    "assets/Images/e2.jpeg",
-    "assets/Images/e2.jpeg",
-    "assets/Images/e2.jpeg",
+    "assets/Images/events/event2.jpeg",
+    "assets/Images/events/event3.jpeg",
   ];
 
   @override
