@@ -20,7 +20,7 @@ class _BookMarkBodyState extends State<BookMarkBody> {
     return Padding(
       padding: EdgeInsets.only(top: 2.h),
       child: Padding(
-        padding: EdgeInsets.only(bottom: 15.h),
+        padding: EdgeInsets.only(bottom: 0.h),
         child: length != 0
             ? ListView.builder(
                 itemCount: length,
