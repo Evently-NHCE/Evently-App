@@ -4,6 +4,7 @@ import 'package:evently/Screens/SignIN/Components/RoundedRectengleTextField.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../Utility/CustomSnackBar.dart';
@@ -109,7 +110,7 @@ class SignUPPageBody extends StatelessWidget {
                     splashColor: HexColor("#8454CE"),
                     customBorder: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
-                    onTap: () {
+                    onTap: () async {
                       if (emailControler.text.isEmpty ||
                           passwordController.text.isEmpty ||
                           usnControlller.text.isEmpty ||
@@ -136,6 +137,12 @@ class SignUPPageBody extends StatelessWidget {
                             var _type = FeedbackType.selection;
                             Vibrate.feedback(_type);
                             Navigator.pushNamed(context, '/DataForm');
+
+                            //store the data in shared preferences
+                            SharedPreferences prefs =
+                                await SharedPreferences.getInstance();
+                            prefs.setString("usn", usn.toString());
+                            prefs.setString("pass", password.toString());
                           } else {
                             var _type = FeedbackType.error;
                             Vibrate.feedback(_type);
