@@ -16,7 +16,7 @@ class _ProfileCardState extends State<ProfileCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 29.h,
+      height: 20.h,
       width: 100.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -142,122 +142,122 @@ class _ProfileCardState extends State<ProfileCard> {
             SizedBox(
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: 1.h,
-                    left: 1.w,
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        '100',
-                        style: GoogleFonts.roboto(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      ),
-                      Text(
-                        'Followers',
-                        style: GoogleFonts.roboto(
-                          color: HexColor("#F8F8F8"),
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: 1.h,
-                    left: 1.w,
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        '20',
-                        style: GoogleFonts.roboto(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      ),
-                      Text(
-                        'Following',
-                        style: GoogleFonts.roboto(
-                          color: HexColor("#F8F8F8"),
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 15,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: 1.h,
-                    left: 1.w,
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        '10',
-                        style: GoogleFonts.roboto(
-                          color: HexColor("#F8F8F8"),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25,
-                        ),
-                      ),
-                      Text(
-                        'Events',
-                        style: GoogleFonts.roboto(
-                          color: Colors.white,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 32,
-                ),
-                SizedBox(
-                  width: 117,
-                  height: 35,
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Follow',
-                      style: TextStyle(
-                        fontSize: 17,
-                      ),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(Colors.white),
-                      foregroundColor:
-                          MaterialStateProperty.all<Color>(Colors.black),
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [
+            //     Padding(
+            //       padding: EdgeInsets.only(
+            //         top: 1.h,
+            //         left: 1.w,
+            //       ),
+            //       child: Column(
+            //         children: [
+            //           Text(
+            //             '100',
+            //             style: GoogleFonts.roboto(
+            //               color: Colors.white,
+            //               fontWeight: FontWeight.bold,
+            //               fontSize: 25,
+            //             ),
+            //           ),
+            //           Text(
+            //             'Followers',
+            //             style: GoogleFonts.roboto(
+            //               color: HexColor("#F8F8F8"),
+            //               fontSize: 12,
+            //               fontWeight: FontWeight.w400,
+            //             ),
+            //           )
+            //         ],
+            //       ),
+            //     ),
+            //     SizedBox(
+            //       width: 15,
+            //     ),
+            //     Padding(
+            //       padding: EdgeInsets.only(
+            //         top: 1.h,
+            //         left: 1.w,
+            //       ),
+            //       child: Column(
+            //         children: [
+            //           Text(
+            //             '20',
+            //             style: GoogleFonts.roboto(
+            //               color: Colors.white,
+            //               fontWeight: FontWeight.bold,
+            //               fontSize: 25,
+            //             ),
+            //           ),
+            //           Text(
+            //             'Following',
+            //             style: GoogleFonts.roboto(
+            //               color: HexColor("#F8F8F8"),
+            //               fontSize: 12,
+            //               fontWeight: FontWeight.w400,
+            //             ),
+            //           )
+            //         ],
+            //       ),
+            //     ),
+            //     SizedBox(
+            //       width: 15,
+            //     ),
+            //     Padding(
+            //       padding: EdgeInsets.only(
+            //         top: 1.h,
+            //         left: 1.w,
+            //       ),
+            //       child: Column(
+            //         children: [
+            //           Text(
+            //             '10',
+            //             style: GoogleFonts.roboto(
+            //               color: HexColor("#F8F8F8"),
+            //               fontWeight: FontWeight.bold,
+            //               fontSize: 25,
+            //             ),
+            //           ),
+            //           Text(
+            //             'Events',
+            //             style: GoogleFonts.roboto(
+            //               color: Colors.white,
+            //               fontSize: 12,
+            //               fontWeight: FontWeight.w400,
+            //             ),
+            //           )
+            //         ],
+            //       ),
+            //     ),
+            //     SizedBox(
+            //       width: 32,
+            //     ),
+            //     SizedBox(
+            //       width: 117,
+            //       height: 35,
+            //       child: TextButton(
+            //         onPressed: () {},
+            //         child: Text(
+            //           'Follow',
+            //           style: TextStyle(
+            //             fontSize: 17,
+            //           ),
+            //         ),
+            //         style: ButtonStyle(
+            //           backgroundColor:
+            //               MaterialStateProperty.all<Color>(Colors.white),
+            //           foregroundColor:
+            //               MaterialStateProperty.all<Color>(Colors.black),
+            //           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            //             RoundedRectangleBorder(
+            //               borderRadius: BorderRadius.circular(18.0),
+            //             ),
+            //           ),
+            //         ),
+            //       ),
+            //     ),
+            //   ],
+            // ),
           ],
         ),
       ),
