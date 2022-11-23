@@ -83,7 +83,7 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
             fontFamily: GoogleFonts.chivo().fontFamily,
             scaffoldBackgroundColor: kBackgroundColor),
-        home: Navigation(),
+        home: Onboarding(),
       ),
     );
   }
