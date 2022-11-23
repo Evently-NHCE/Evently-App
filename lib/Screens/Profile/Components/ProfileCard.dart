@@ -82,6 +82,7 @@ class _ProfileCardState extends State<ProfileCard> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Container(
                               child: Text(
@@ -131,18 +132,10 @@ class _ProfileCardState extends State<ProfileCard> {
                         borderRadius: BorderRadius.circular(18.0),
                       ))),
                   onPressed: () {},
-                  child: Row(
-                    children: [
-                      Text('Edit Profile',
-                          style: GoogleFonts.roboto(
-                            color: Colors.white,
-                          )),
-                      Icon(
-                        Icons.tune_rounded,
-                        size: 20,
-                        color: HexColor("#C9F560"),
-                      ),
-                    ],
+                  child: Icon(
+                    Icons.tune_rounded,
+                    size: 20,
+                    color: HexColor("#C9F560"),
                   ),
                 ),
               ],
