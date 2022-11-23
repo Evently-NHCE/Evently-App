@@ -77,7 +77,7 @@ class _HomePageBodyState extends State<HomePageBody> {
         'banner': 'assets/Images/events/event1.png',
       },
       {
-        'eventName': 'Competitive Programming.',
+        'eventName': 'Competitive Programming',
         'banner': 'assets/Images/events/event2.jpeg',
       },
       {

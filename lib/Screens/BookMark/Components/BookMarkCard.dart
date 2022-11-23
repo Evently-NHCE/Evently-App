@@ -76,8 +76,8 @@ class _BookMarkCardState extends State<BookMarkCard> {
                   ),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
-                    child: Image.network(
-                      "https://picsum.photos/250?image=9",
+                    child: Image.asset(
+                      bookmarks[index]['image'],
                       fit: BoxFit.cover,
                     ),
                   ),

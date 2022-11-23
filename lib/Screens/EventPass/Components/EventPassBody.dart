@@ -7,7 +7,11 @@ import 'package:sizer/sizer.dart';
 import '/Utility/Constants.dart';
 
 class EventPassBody extends StatefulWidget {
-  const EventPassBody({Key? key}) : super(key: key);
+  final String eventTitle;
+  final String backgroundImage;
+  const EventPassBody(
+      {Key? key, required this.backgroundImage, required this.eventTitle})
+      : super(key: key);
 
   @override
   State<EventPassBody> createState() => _EventPassBodyState();
@@ -71,8 +75,7 @@ class _EventPassBodyState extends State<EventPassBody> {
                                 height: 25,
                               ),
                               SizedBox(
-                                child: Image.asset(
-                                    'assets/Images/eventbanner.png'),
+                                child: Image.asset(widget.backgroundImage),
                                 height: 180,
                                 width: 292,
                               ),
@@ -80,7 +83,7 @@ class _EventPassBodyState extends State<EventPassBody> {
                                 height: 5,
                               ),
                               Text(
-                                'Code-a-Pookalam',
+                                widget.eventTitle,
                                 style: GoogleFonts.poppins(
                                   color: Colors.white,
                                   fontSize: 15,
