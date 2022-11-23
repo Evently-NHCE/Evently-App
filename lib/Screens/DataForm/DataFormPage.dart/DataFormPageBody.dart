@@ -1,4 +1,5 @@
 import 'package:evently/Model/Authentication.dart';
+import 'package:evently/Model/UserInfo.dart';
 import 'package:evently/Screens/DataForm/DataFormPage.dart/BranchSelection.dart';
 import 'package:evently/Screens/DataForm/DataFormPage.dart/CollegeSelection.dart';
 import 'package:evently/Screens/DataForm/DataFormPage.dart/CurrentYear.dart';

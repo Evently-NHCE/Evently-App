@@ -1,3 +1,5 @@
+import 'package:evently/Model/UserInfo.dart';
+import 'package:evently/Screens/Notifications/NotificationsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
