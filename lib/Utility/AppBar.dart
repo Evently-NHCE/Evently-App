@@ -1,4 +1,5 @@
 import 'package:evently/Screens/AbotUs%20Page/AboutUs.dart';
+import 'package:evently/Screens/Notifications/NotificationsPage.dart';
 import 'package:evently/Utility/Constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -35,7 +36,9 @@ AppBar appBar(String title) {
       Padding(
         padding: EdgeInsets.only(top: 2.h),
         child: InkWell(
-            onTap: () async {},
+            onTap: () async {
+              Get.to(NotificationsPage());
+            },
             child: Container(
               height: 5.h,
               width: 10.w,
