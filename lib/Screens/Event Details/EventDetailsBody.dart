@@ -10,7 +10,10 @@ import '../../Widgets/CircleIcons.dart';
 import '../../Widgets/VCard.dart';
 
 class EventDetailsBody extends StatelessWidget {
-  const EventDetailsBody({Key? key});
+  final String eventName;
+  final String banner;
+  const EventDetailsBody(
+      {Key? key, required this.eventName, required this.banner});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,7 @@ class EventDetailsBody extends StatelessWidget {
         body: Stack(
           children: [
             Image.asset(
-              "assets/Images/e1.jpeg",
+              banner,
               fit: BoxFit.cover,
               width: double.infinity,
             ),
@@ -67,7 +70,7 @@ class EventDetailsBody extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.only(left: 2.w),
                               child: Text(
-                                "IEEE DAY SB VOLUNTEERS",
+                                eventName,
                                 style: GoogleFonts.poppins(
                                     color: Colors.white,
                                     fontSize: 18.sp,
@@ -278,7 +281,7 @@ class EventDetailsBody extends StatelessWidget {
                                           fontWeight: FontWeight.bold)),
                                   SizedBox(height: 2.h),
                                   Text(
-                                      "The IEEE Bangalore Section SAC Team and Bangalore Section Young Professionals, in collaboration with the IEEE NHCE Student Branch, are organizing an Orientation and Panel Discussion that will mainly be a townhall forum between students and section/student branch committee members to discuss the perks and benefits of being a part of the IEEE community as a student or graduate member.",
+                                      "The $eventName Bangalore Section SAC Team and Bangalore Section Young Professionals, in collaboration with the IEEE NHCE Student Branch, are organizing an Orientation and Panel Discussion that will mainly be a townhall forum between students and section/student branch committee members to discuss the perks and benefits of being a part of the IEEE community as a student or graduate member.",
                                       style: GoogleFonts.poppins(
                                           color: Colors.white,
                                           fontSize: 8.sp,

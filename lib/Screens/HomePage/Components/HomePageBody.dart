@@ -101,7 +101,10 @@ class _HomePageBodyState extends State<HomePageBody> {
         itemBuilder: (context, index) {
           return InkWell(
               onTap: () {
-                Get.to(EventDeatils());
+                Get.to(EventDeatils(
+                  eventName: events[index]['eventName'],
+                  banner: events[index]['banner'],
+                ));
               },
               child: EventCard(
                 eventName: events[index]['eventName'],
