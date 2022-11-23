@@ -9,7 +9,10 @@ import 'package:sizer/sizer.dart';
 import 'package:text_scroll/text_scroll.dart';
 
 class EventCard extends StatefulWidget {
-  const EventCard({Key? key}) : super(key: key);
+  final String eventName;
+  final String banner;
+  const EventCard({Key? key, required this.eventName, required this.banner})
+      : super(key: key);
 
   @override
   State<EventCard> createState() => _EventCardState();
@@ -40,7 +43,7 @@ class _EventCardState extends State<EventCard> {
                             topRight: Radius.circular(22.0),
                           ),
                           child: Image.asset(
-                            "assets/Images/bg.png",
+                            widget.banner,
                             fit: BoxFit.cover,
                           )),
                     ),
@@ -59,7 +62,7 @@ class _EventCardState extends State<EventCard> {
                                 ),
                                 Expanded(
                                   child: TextScroll(
-                                    "Code-a-Pookkalam",
+                                    widget.eventName,
                                     velocity: Velocity(
                                         pixelsPerSecond: Offset(20, 0)),
                                     pauseBetween: Duration(milliseconds: 1000),

@@ -43,7 +43,7 @@ class _HomePageBodyState extends State<HomePageBody> {
               ],
             ),
             SizedBox(height: 2.h),
-            buildPopularEvents(),
+            buildEvents(upcomingEvents: false),
             SizedBox(height: 2.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -58,7 +58,7 @@ class _HomePageBodyState extends State<HomePageBody> {
               ],
             ),
             SizedBox(height: 2.h),
-            buildPopularEvents(),
+            buildEvents(upcomingEvents: true),
             SizedBox(height: 2.h),
           ],
         ),
@@ -66,19 +66,47 @@ class _HomePageBodyState extends State<HomePageBody> {
     );
   }
 
-  Widget buildPopularEvents() {
+  Widget buildEvents({required bool upcomingEvents}) {
+    List<Map<String, dynamic>> events = [
+      {
+        'eventName': 'Pre Party',
+        'banner': 'assets/Images/events/event5.jpeg',
+      },
+      {
+        'eventName': 'Code-a-Pookaam',
+        'banner': 'assets/Images/events/event1.png',
+      },
+      {
+        'eventName': 'Competitive Programming.',
+        'banner': 'assets/Images/events/event2.jpeg',
+      },
+      {
+        'eventName': 'HACKZON',
+        'banner': 'assets/Images/events/event3.jpeg',
+      },
+      {
+        'eventName': 'ECCENTRA',
+        'banner': 'assets/Images/events/event4.jpeg',
+      }
+    ];
+    if (upcomingEvents == true) {
+      events.shuffle();
+    }
     return Container(
       height: 32.h,
       width: double.infinity,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 5,
+        itemCount: events.length,
         itemBuilder: (context, index) {
           return InkWell(
               onTap: () {
                 Get.to(EventDeatils());
               },
-              child: EventCard());
+              child: EventCard(
+                eventName: events[index]['eventName'],
+                banner: events[index]['banner'],
+              ));
         },
       ),
     );
