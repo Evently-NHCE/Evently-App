@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             fontFamily: GoogleFonts.chivo().fontFamily,
             scaffoldBackgroundColor: kBackgroundColor),
-        home: Navigation(),
+        home: SignUp(),
       ),
     );
   }

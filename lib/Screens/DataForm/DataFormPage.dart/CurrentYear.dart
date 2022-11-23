@@ -37,7 +37,7 @@ class _CurrentYearState extends State<CurrentYear> {
               underline: SizedBox(),
               dropdownColor: kNavbarcolour,
               isExpanded: true,
-              alignment: Alignment.bottomCenter,
+              alignment: Alignment.center,
               icon: Image.asset("assets/Icons/DownArrow.png"),
               iconSize: 30,
               hint: _selected

@@ -23,7 +23,7 @@ class DataFormPageBody extends StatefulWidget {
 TextEditingController _phonecontroller = TextEditingController();
 TextEditingController _instragamcontroller = TextEditingController();
 TextEditingController _githubController = TextEditingController();
-Authen authen = Authen();
+// Authen authen = Authen();
 
 class _DataFormPageBodyState extends State<DataFormPageBody> {
   @override
@@ -74,26 +74,24 @@ class _DataFormPageBodyState extends State<DataFormPageBody> {
             SizedBox(
               height: 4.h,
             ),
-            RoundedBoxTextField(
-                controller: _instragamcontroller,
-                icondata: FontAwesomeIcons.instagram,
-                hintText: "Instagram Username",
-                obscureText: false,
-                autocorrect: true,
-                enableSuggestions: true),
-            SizedBox(
-              height: 4.h,
-            ),
-            RoundedBoxTextField(
-                controller: _githubController,
-                icondata: FontAwesomeIcons.github,
-                hintText: "GitHub Username",
-                obscureText: false,
-                autocorrect: true,
-                enableSuggestions: true),
-            SizedBox(
-              height: 4.h,
-            ),
+            // RoundedBoxTextField(
+            //     controller: _instragamcontroller,
+            //     icondata: FontAwesomeIcons.instagram,
+            //     hintText: "Instagram Username",
+            //     obscureText: false,
+            //     autocorrect: true,
+            //     enableSuggestions: true),
+            // SizedBox(
+            //   height: 4.h,
+            // ),
+            // RoundedBoxTextField(
+            //     controller: _githubController,
+            //     icondata: FontAwesomeIcons.github,
+            //     hintText: "GitHub Username",
+            //     obscureText: false,
+            //     autocorrect: true,
+            //     enableSuggestions: true),
+
             GenderDropDownMenu(),
             SizedBox(height: 4.h),
             CollegeSelection(),
@@ -109,27 +107,12 @@ class _DataFormPageBodyState extends State<DataFormPageBody> {
               customBorder: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
               onTap: () {
-                if (_githubController.text.isNotEmpty &&
-                    _instragamcontroller.text.isNotEmpty &&
-                    currentyear!.isNotEmpty &&
+                if (currentyear!.isNotEmpty &&
                     gender!.isNotEmpty &&
                     college!.isNotEmpty &&
                     branch!.isNotEmpty) {
-                  authen.registerUser({
-                    "Username": "",
-                    "Password": "dhjdfhjdjdjf",
-                    "UniqueStudentId": "1NH20CS272",
-                    "CollegeName": "New Horizon College of engineering",
-                    "BranchName": "CSE",
-                    "CurrentYear": "3rd",
-                    "ContactNumber": "8707405905",
-                    "Email": "Vishwajeet@test.com",
-                    "GithubId": "Vishwajeet690"
-                  });
                   Navigator.pushNamed(context, '/Navigation');
-                } else if (_githubController.text.isEmpty ||
-                    _instragamcontroller.text.isEmpty ||
-                    currentyear!.isEmpty ||
+                } else if (currentyear!.isEmpty ||
                     gender!.isEmpty ||
                     college!.isEmpty ||
                     branch!.isEmpty) {

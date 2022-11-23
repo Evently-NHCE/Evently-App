@@ -42,8 +42,8 @@ class _BranchSelectionState extends State<BranchSelection> {
               dropdownColor: kNavbarcolour,
               underline: SizedBox(),
               isExpanded: true,
-              alignment: Alignment.bottomCenter,
-              icon: Image.asset("assets/Icons/.png"),
+              alignment: Alignment.center,
+              icon: Image.asset("assets/Icons/DownArrow.png"),
               iconSize: 30,
               hint: _selected
                   ? Text(

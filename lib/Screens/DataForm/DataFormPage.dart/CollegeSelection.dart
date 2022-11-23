@@ -34,7 +34,7 @@ class _CollegeSelectionState extends State<CollegeSelection> {
           child: DropdownButton(
               underline: SizedBox(),
               isExpanded: true,
-              alignment: Alignment.bottomCenter,
+              alignment: Alignment.center,
               icon: Image.asset("assets/Icons/DownArrow.png"),
               dropdownColor: kNavbarcolour,
               iconSize: 30,
