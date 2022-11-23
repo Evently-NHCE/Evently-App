@@ -1,20 +1,26 @@
+import 'package:evently/Model/UserInfo.dart';
+import 'package:evently/controllers/UserController.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:heroicons/heroicons.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
 class AboutSection extends StatefulWidget {
-  const AboutSection({Key? key}) : super(key: key);
+  const AboutSection({Key? key, UserInfo? userInfo}) : super(key: key);
 
   @override
   State<AboutSection> createState() => _AboutSectionState();
 }
 
 class _AboutSectionState extends State<AboutSection> {
+  final UserController userController =
+      Get.put(UserController(), permanent: false);
   @override
   Widget build(BuildContext context) {
+    UserInfo? userInfo = userController.userInfo;
     return Padding(
       padding: EdgeInsets.only(left: 3.w, right: 3.w),
       child: Column(
@@ -32,7 +38,7 @@ class _AboutSectionState extends State<AboutSection> {
             height: 5,
           ),
           Text(
-            'Hello. My name is Sanjana working as UI/UX designer. The user interactive UI design will help you and your website or app to convert the visitor to real customers and that will help you to make great revenue for your business...',
+            'Hello. My name is ${userInfo?.name} working as UI/UX designer. The user interactive UI design will help you and your website or app to convert the visitor to real customers and that will help you to make great revenue for your business...',
             style: GoogleFonts.roboto(
               color: Colors.white,
               fontSize: 14,
@@ -74,7 +80,7 @@ class _AboutSectionState extends State<AboutSection> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Computer Science Engineering',
+                    userInfo?.branch ?? 'Computer Science',
                     style: GoogleFonts.poppins(
                       color: Colors.white,
                       fontSize: 14,
@@ -139,7 +145,7 @@ class _AboutSectionState extends State<AboutSection> {
                 width: 7,
               ),
               Text(
-                '1NH20CS188',
+                userInfo?.usn ?? 'null',
                 style: GoogleFonts.poppins(
                   color: Colors.white,
                   fontSize: 14,
