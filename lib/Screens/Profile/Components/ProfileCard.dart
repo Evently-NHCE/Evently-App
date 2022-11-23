@@ -1,4 +1,3 @@
-import 'package:evently/Screens/Notifications/NotificationsPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,7 +7,9 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
 class ProfileCard extends StatefulWidget {
-  const ProfileCard({Key? key}) : super(key: key);
+  final UserInfo? userInfo;
+
+  const ProfileCard({Key? key, this.userInfo}) : super(key: key);
 
   @override
   State<ProfileCard> createState() => _ProfileCardState();
@@ -17,6 +18,7 @@ class ProfileCard extends StatefulWidget {
 class _ProfileCardState extends State<ProfileCard> {
   @override
   Widget build(BuildContext context) {
+    UserInfo userInfo = widget.userInfo!;
     return Container(
       height: 20.h,
       width: 100.w,
@@ -81,7 +83,7 @@ class _ProfileCardState extends State<ProfileCard> {
                           children: [
                             Container(
                               child: Text(
-                                'Ritika Hirenath',
+                                userInfo.name,
                                 style: GoogleFonts.poppins(
                                   fontSize: 14,
                                   fontWeight: FontWeight.bold,
@@ -102,7 +104,7 @@ class _ProfileCardState extends State<ProfileCard> {
                         ),
                         Container(
                           child: Text(
-                            '1NH20CS000',
+                            userInfo.usn,
                             style: GoogleFonts.poppins(
                               fontSize: 14,
                               color: Colors.white,

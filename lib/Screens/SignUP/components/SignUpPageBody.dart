@@ -1,8 +1,11 @@
 import 'package:blobs/blobs.dart';
+import 'package:evently/Model/UserInfo.dart';
 import 'package:evently/Screens/SignIN/Components/RoundedIconButton.dart';
 import 'package:evently/Screens/SignIN/Components/RoundedRectengleTextField.dart';
+import 'package:evently/controllers/UserController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
@@ -21,6 +24,8 @@ class SignUPPageBody extends StatelessWidget {
   TextEditingController passwordController = TextEditingController();
   TextEditingController emailControler = TextEditingController();
   TextEditingController nameController = TextEditingController();
+  final UserController userController =
+      Get.put(UserController(), permanent: false);
   Widget build(BuildContext context) {
     return Stack(
       children: [
@@ -134,6 +139,17 @@ class SignUPPageBody extends StatelessWidget {
                             name = nameController.text;
                             email = emailControler.text;
                             password = passwordController.text;
+
+                            // Storing the data in the controller to access it from
+                            // the next screen and add it all together in a variable of
+                            // type UserInfo
+                            UserInfo userInfo = UserInfo(
+                                usn: usn,
+                                name: name,
+                                emaild: email,
+                                password: password);
+                            userController.setUserInfo(userInfo);
+
                             var _type = FeedbackType.selection;
                             Vibrate.feedback(_type);
                             Navigator.pushNamed(context, '/DataForm');
