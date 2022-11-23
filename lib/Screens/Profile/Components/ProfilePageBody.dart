@@ -1,3 +1,4 @@
+import 'package:evently/Model/UserInfo.dart';
 import 'package:evently/Screens/Profile/Components/About.dart';
 import 'package:evently/Screens/Profile/Components/Attendance.dart';
 import 'package:evently/Screens/Profile/Components/Badges.dart';
@@ -11,7 +12,8 @@ import 'package:sizer/sizer.dart';
 import 'CertificateBody.dart';
 
 class ProfilePageBody extends StatefulWidget {
-  const ProfilePageBody({Key? key}) : super(key: key);
+  final UserInfo? userInfo;
+  const ProfilePageBody({Key? key, this.userInfo}) : super(key: key);
 
   @override
   State<ProfilePageBody> createState() => _ProfilePageBodyState();
@@ -32,7 +34,7 @@ class _ProfilePageBodyState extends State<ProfilePageBody> {
       child: Column(
         //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ProfileCard(),
+          ProfileCard(userInfo: widget.userInfo),
           Padding(
             padding: EdgeInsets.fromLTRB(
               8,

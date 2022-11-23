@@ -1,12 +1,17 @@
+import 'dart:convert';
+
 import 'package:evently/Model/Authentication.dart';
+import 'package:evently/Model/UserInfo.dart';
 import 'package:evently/Screens/DataForm/DataFormPage.dart/BranchSelection.dart';
 import 'package:evently/Screens/DataForm/DataFormPage.dart/CollegeSelection.dart';
 import 'package:evently/Screens/DataForm/DataFormPage.dart/CurrentYear.dart';
 import 'package:evently/Screens/DataForm/DataFormPage.dart/GenreSelection.dart';
 import 'package:evently/Screens/SignIN/Components/RoundedRectengleTextField.dart';
 import 'package:evently/Utility/CustomSnackBar.dart';
+import 'package:evently/controllers/UserController.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -26,6 +31,8 @@ TextEditingController _githubController = TextEditingController();
 // Authen authen = Authen();
 
 class _DataFormPageBodyState extends State<DataFormPageBody> {
+  final UserController userController =
+      Get.put(UserController(), permanent: false);
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -111,6 +118,20 @@ class _DataFormPageBodyState extends State<DataFormPageBody> {
                     gender!.isNotEmpty &&
                     college!.isNotEmpty &&
                     branch!.isNotEmpty) {
+                  // Retrieving the user info captured in the previous screen
+
+                  UserInfo userInfo = UserInfo(
+                      usn: userController.userInfo!.usn,
+                      name: userController.userInfo!.name,
+                      emaild: userController.userInfo!.emaild,
+                      password: userController.userInfo!.password,
+                      phone: userController.userInfo!.phone,
+                      gender: gender!,
+                      college: college!,
+                      branch: branch!,
+                      semYear: currentyear!);
+
+                  userController.setUserInfo(userInfo);
                   Navigator.pushNamed(context, '/Navigation');
                 } else if (currentyear!.isEmpty ||
                     gender!.isEmpty ||
