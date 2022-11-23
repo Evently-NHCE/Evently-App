@@ -1,7 +1,9 @@
 import 'package:blobs/blobs.dart';
+import 'package:evently/Screens/Navigation/Navigation.dart';
 import 'package:evently/Screens/SignIN/Components/RoundedRectengleTextField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vibrate/flutter_vibrate.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
@@ -83,7 +85,7 @@ class SignInPageBody extends StatelessWidget {
                   onTap: () {
                     var _type = FeedbackType.selection;
                     Vibrate.feedback(_type);
-                    Navigator.pushNamed(context, '/SignUp');
+                    Get.to(Navigation());
                   },
                   child: RoundedIconButton(
                     hinttext: "Sign In",

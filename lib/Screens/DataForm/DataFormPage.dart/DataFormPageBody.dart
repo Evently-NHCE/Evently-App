@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:evently/Model/Authentication.dart';
 import 'package:evently/Model/UserInfo.dart';
 import 'package:evently/Screens/DataForm/DataFormPage.dart/BranchSelection.dart';
@@ -113,7 +111,7 @@ class _DataFormPageBodyState extends State<DataFormPageBody> {
               splashColor: HexColor("#8454CE"),
               customBorder: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
-              onTap: () {
+              onTap: () async {
                 if (currentyear!.isNotEmpty &&
                     gender!.isNotEmpty &&
                     college!.isNotEmpty &&

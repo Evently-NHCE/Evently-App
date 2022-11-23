@@ -1,5 +1,7 @@
 import 'package:evently/Model/UserInfo.dart';
+import 'package:evently/Screens/Notifications/NotificationsPage.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:heroicons/heroicons.dart';
@@ -48,7 +50,9 @@ class _ProfileCardState extends State<ProfileCard> {
                   ),
                 ),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(NotificationsPage());
+                    },
                     icon: HeroIcon(
                       HeroIcons.bell,
                       color: HexColor("#C9F560"),

@@ -1,6 +1,7 @@
 import 'package:evently/Screens/SignUP/components/SignUpPageBody.dart';
 import 'package:evently/Utility/Colors.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({Key? key}) : super(key: key);

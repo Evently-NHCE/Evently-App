@@ -9,10 +9,12 @@ class EventDeatils extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: EventDetailsBody(
-        eventName: eventName,
-        banner: banner,
+    return SafeArea(
+      child: Scaffold(
+        body: EventDetailsBody(
+          eventName: eventName,
+          banner: banner,
+        ),
       ),
     );
   }
