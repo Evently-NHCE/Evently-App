@@ -1,6 +1,6 @@
-import 'package:evently/Screens/AbotUs%20Page/AboutUs.dart';
 import 'package:evently/Screens/Notifications/NotificationsPage.dart';
 import 'package:evently/Utility/Constants.dart';
+import 'package:evently/controllers/drawerController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,13 +8,14 @@ import 'package:heroicons/heroicons.dart';
 import 'package:sizer/sizer.dart';
 
 AppBar appBar(String title) {
+  dController dControllers = Get.put(dController());
   return AppBar(
     centerTitle: true,
     backgroundColor: Colors.transparent,
     elevation: 0,
     leading: InkWell(
       onTap: () {
-        Get.to(AboutUs());
+        dControllers.key.currentState!.openDrawer();
       },
       child: Container(
           margin: const EdgeInsets.all(12),

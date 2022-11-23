@@ -139,10 +139,14 @@ class SignUPPageBody extends StatelessWidget {
                             Navigator.pushNamed(context, '/DataForm');
 
                             //store the data in shared preferences
+
                             SharedPreferences prefs =
                                 await SharedPreferences.getInstance();
                             prefs.setString("usn", usn.toString());
                             prefs.setString("pass", password.toString());
+                            prefs.setString("name", name.toString());
+
+                            ///////////////
                           } else {
                             var _type = FeedbackType.error;
                             Vibrate.feedback(_type);

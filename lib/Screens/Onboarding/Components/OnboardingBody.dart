@@ -1,5 +1,6 @@
 import 'package:evently/Screens/Navigation/Navigation.dart';
 import 'package:evently/Screens/Onboarding/Models/Model.dart';
+import 'package:evently/Screens/SignUP/SignUp.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -24,7 +25,7 @@ class _OnboardingBodyState extends State<OnboardingBody> {
           pages: getPages(),
           onDone: () {
             Navigator.pushReplacement(
-                context, MaterialPageRoute(builder: (context) => Navigation()));
+                context, MaterialPageRoute(builder: (context) => SignUp()));
           },
 
           showSkipButton: true,

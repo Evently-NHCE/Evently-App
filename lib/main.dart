@@ -2,6 +2,7 @@
 import 'package:evently/Screens/DataForm/DataForm.dart';
 
 import 'package:evently/Screens/Navigation/Navigation.dart';
+import 'package:evently/Screens/Onboarding/Onboarding.dart';
 
 import 'package:evently/Screens/SignIN/SignIn.dart';
 import 'package:evently/Utility/Colors.dart';
@@ -47,6 +48,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     // TODO: implement initState
+    getStringValuesSF();
     super.initState();
   }
 
@@ -55,11 +57,12 @@ class _MyAppState extends State<MyApp> {
     //Return String
     String? usn = prefs.getString("usn");
     String? pass = prefs.getString("pass");
+    String? name = prefs.getString("name");
 
     // print("token is" + stringValue.toString());
 
     if (usn == null) {
-      Get.offAll(() => SignUp());
+      Get.offAll(() => Onboarding());
     } else {
       Get.offAll(() => Navigation());
     }
@@ -80,7 +83,7 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(
             fontFamily: GoogleFonts.chivo().fontFamily,
             scaffoldBackgroundColor: kBackgroundColor),
-        home: Container(),
+        home: Onboarding(),
       ),
     );
   }

@@ -28,7 +28,7 @@ List<PageViewModel> getPages() {
             height: 800),
       ),
       title: "Get latest updates",
-      body: "Don’t misout any event and get latest updates on your phone",
+      body: "Don’t miss any event and get latest updates on your phone",
       decoration: PageDecoration(
         titleTextStyle: titleTextStyle,
         bodyTextStyle: bodyTextStyle,
@@ -43,8 +43,8 @@ List<PageViewModel> getPages() {
             width: 500,
             height: 800),
       ),
-      title: "Achieve  Recognition",
-      body: "Get attendance , badges and certificates",
+      title: "Manage all your events",
+      body: "View  attendance , badges and certificates",
       decoration: PageDecoration(
         titleTextStyle: titleTextStyle,
         bodyTextStyle: bodyTextStyle,
@@ -56,8 +56,9 @@ List<PageViewModel> getPages() {
           'https://assets4.lottiefiles.com/packages/lf20_ffkzpglj.json',
           width: 500,
           height: 800),
-      title: "Build your network",
-      body: "Connect with different people and buid your network",
+      title: "Connect with people in your college",
+      body:
+          " Pursue your passion and share your ideas with people in your college",
       decoration: PageDecoration(
         titleTextStyle: titleTextStyle,
         bodyTextStyle: bodyTextStyle,
